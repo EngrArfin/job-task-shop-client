@@ -2,15 +2,15 @@ import React from 'react';
 import Header from '../Header/Header';
 import Footer from '../Share/Footer/Footer';
 import ProdutCard from '../Share/ProdutCard/ProdutCard';
-import Produt from '../Share/Produt/Produt';
+import Category from '../Share/Category/Category';
 
 const Home = () => {
     return (
         <div>
            
            <Header></Header>
+           <Category></Category>
            <ProdutCard></ProdutCard>
-           <Produt></Produt>
             <Footer></Footer>
         </div>
     );
