@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Produt from '../Produt/Produt';
 import SectionTitle from '../SectionTitle/SectionTitle';
+import CategoryProduct from '../CategoryProduct/CategoryProduct';
 
 const ProdutCard = () => {
     const [menu, setMenu] = useState([]);
@@ -19,7 +20,7 @@ const ProdutCard = () => {
                 heading="Product"
                 subHeading="open fooer here"
             ></SectionTitle>
-            <div className='grid md:grid-cols-2 gap-10'>
+            <div className='grid md:grid-cols-3 gap-5'>
                 {
                     menu.map(item => <Produt
                         key={item._id}

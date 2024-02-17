@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home/Home";
 import Dashboard from "../Layout/Dashboard";
 import SignUp from "../pages/Home/Share/SignUp/SignUp";
 import ProdutCard from "../pages/Home/Share/ProdutCard/ProdutCard";
+import CategoryProductItem from "../pages/Home/Share/CategoryProductItem/CategoryProductItem";
 import CategoryProduct from "../pages/Home/Share/CategoryProduct/CategoryProduct";
 
 
