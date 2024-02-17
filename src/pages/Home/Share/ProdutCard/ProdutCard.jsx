@@ -14,7 +14,7 @@ const ProdutCard = () => {
             })
     }, [])
     return (
-        <div>
+        <div className='mx-auto'>
             <SectionTitle
                 heading="Product"
                 subHeading="open fooer here"

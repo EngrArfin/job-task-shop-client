@@ -7,8 +7,6 @@ import SocialLogin from '../Share/SocialLogin/SocialLogin';
 const Header = () => {
     return (
         <div>
-            <NavBar></NavBar>
-
             <div className="hero min-h-screen bg-white-100">
                 <div className="hero-content flex-col lg:flex-row">
                     <img src={headerphoto} className="max-w-sm rounded-lg shadow-2xl" />

@@ -11,7 +11,6 @@ const Home = () => {
            <Header></Header>
            <Category></Category>
            <ProdutCard></ProdutCard>
-            <Footer></Footer>
         </div>
     );
 };

@@ -18,8 +18,9 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1 p-4">
-                        <Link to='home' className="btn">Home</Link>
+                        <Link to='/' className="btn">Home</Link>
                         <Link to='product' className="btn">Product</Link>
+                        <Link to='productCategory' className="btn">Product Category</Link>
                         <Link to='userhome' className="btn bg-white-100">user</Link>
                         <Link to='adminhome' className="btn">admin</Link>
                         <Link to='home' className="btn ">Login</Link>
