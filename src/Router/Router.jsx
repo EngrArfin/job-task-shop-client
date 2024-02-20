@@ -6,8 +6,8 @@ import Home from "../pages/Home/Home/Home";
 import Dashboard from "../Layout/Dashboard";
 import SignUp from "../pages/Home/Share/SignUp/SignUp";
 import ProdutCard from "../pages/Home/Share/ProdutCard/ProdutCard";
-import CategoryProductItem from "../pages/Home/Share/CategoryProductItem/CategoryProductItem";
 import CategoryProduct from "../pages/Home/Share/CategoryProduct/CategoryProduct";
+import Login from "../pages/Home/Share/Login/Login";
 
 
 export const router = createBrowserRouter([
@@ -20,16 +20,20 @@ export const router = createBrowserRouter([
             element: <Home></Home>
         },
         {
-            path: 'product',
+            path: '/product',
             element: <ProdutCard></ProdutCard>
         },
         {
-            path: 'productCategory',
+            path: '/productCategory',
             element: <CategoryProduct></CategoryProduct>
         },
         {
           path: '/signup',
           element: <SignUp></SignUp>
+        },
+        {
+          path: 'login',
+          element: <Login></Login>
         }
       ]
     },

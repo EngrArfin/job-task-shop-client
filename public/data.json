@@ -1,7 +1,7 @@
  [
         {
             "_id": "642c155b2c4774f05c36eeaa",
-            "end_year": "",
+            "image": "https://ibb.co/svvrCyC",
             "intensity": 6,
             "sector": "Energy",
             "topic": "gas",
@@ -21,7 +21,7 @@
         },
         {
             "_id": "642c155b2c4774f05c36eea1",
-            "end_year": "",
+            "image": "https://ibb.co/kSY7scY",
             "intensity": 6,
             "sector": "Energy",
             "topic": "oil",
@@ -41,7 +41,7 @@
         },
         {
             "_id": "642c155b2c4774f05c36eea2",
-            "end_year": "",
+            "image": "https://ibb.co/f1V6F3d",
             "intensity": 6,
             "sector": "Energy",
             "topic": "consumption",
