@@ -5,10 +5,6 @@ import photo1 from '../../../../assets/photo1.jpg'
 const NavBar = () => {
     return (
         <div>
-            
-
-
-
             <div className="navbar bg-red-600  max-w-8xl fixed z-10  text-white	">
                 <div className="navbar-start">
                     
