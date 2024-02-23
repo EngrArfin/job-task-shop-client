@@ -27,12 +27,14 @@ const Category = () => {
                                 <h2 className="card-title">{category.name}</h2>
                                 <div className="badge badge-secondary">{category.rating}</div>
                                 <p>{category.details}</p>
-                                
+
                                 <div className="card-actions justify-end">
                                     <Link to='/' className="btn btn-primary">Add Product</Link>
                                 </div>
                             </div>
                         </div>
+
+                        
 
                     </div>)
                 }

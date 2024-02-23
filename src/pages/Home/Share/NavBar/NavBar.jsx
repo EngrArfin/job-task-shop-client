@@ -5,55 +5,44 @@ import photo1 from '../../../../assets/photo1.jpg'
 const NavBar = () => {
     return (
         <div>
-            <div className="navbar bg-red-600  max-w-8xl fixed z-10  text-white	">
+            <div className=" fixed navbar bg-red-600  max-w-8xl fixed z-10  text-white	">
                 <div className="navbar-start">
-                    
+
                     <div className='flex mr-20'>
                         <div>
                             <img src={photo1} alt="" className='w-12 rounded-full' />
                         </div>
-                        <div className="form-control ">
-                            <input type="text" placeholder="Search SA Shop" className="input bg-white-100  w-24 md:w-auto" />
+                        {/* <div className="form-control text-black-300 ">
+                            <input type="text " placeholder="Search SA Shop" className="input w-24 md:w-auto" />
+                        </div> */}
+                        <div className='ml-5'>
+                        <label className="input input-bordered flex items-center gap-2">
+                            <input type="text" className="grow" placeholder="Search" />
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
+                        </label>
                         </div>
                     </div>
                 </div>
-                <div className="navbar-middle pl-4">
+                <div className="navbar-end pl-4">
                     <div className="navbar-center hidden lg:flex ">
                         <ul className="menu menu-horizontal px-1 p-4">
-                            <Link to='/' className="mr-4 uppercase">Home</Link>
+                            {/* <Link to='/' className="mr-4 uppercase">Home</Link>
                             <Link to='product' className="mr-4 uppercase">Product</Link>
                             <Link to='productCategory' className="mr-4 uppercase">Product Category</Link>
-                            <Link to='userhome' className="mr-4 uppercase">Sign Up</Link>
-                            <Link to='adminhome' className="mr-4 uppercase">admin</Link>
+                            <Link to='admin' className="mr-4 uppercase">admin</Link> */}
                             <Link to='login' className="mr-4 uppercase">Login</Link>
+                            <Link className=" mr-4 uppercase">|</Link>
+                            <Link to='signup' className="mr-4 uppercase">Sign Up</Link>
+
                         </ul>
                     </div>
-                    <button className="btn btn-black btn-circle">
-                        <div className="indicator">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
-                            <span className="badge badge-xs badge-primary indicator-item"></span>
+                    <Link to='dashboard' tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+                        <div className="indicator ">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 " fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                            <span className="badge badge-sm indicator-item text-green-500">0</span>
                         </div>
-                    </button>
-                    {/* <div className="form-control">
-                        <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
-                    </div> */}
+                    </Link>
 
-                </div>
-            </div>
-
-
-            <div className="navbar bg-red-600 mx-auto max-w-3xl text-white	">
-                <div className="">
-                    <Link to='/' className="mr-4 uppercase">Help Support</Link>
-                    <Link to='/' className="mr-4 uppercase">Contract: +880 1952487468</Link>
-
-                </div>
-                <div className="navbar-middle pl-4">
-                    <div className="navbar-center hidden lg:flex ">
-                        <ul className="menu menu-horizontal px-1 p-4">
-                            <Link to='/' className="mr-4 uppercase">Save More Apps</Link>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>

@@ -17,7 +17,63 @@ import 'daisyui/dist/full.css';
 
 const Header = () => {
     return (
-        <div className='flex bg-white-300'>
+        <div className="drawer lg:drawer-open">
+            <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content flex flex-col items-center justify-center">
+                {/* Page content here */}
+
+                <div className="">
+                    <div className='mr-20 mt-4'>
+                        <Carousel>
+                            <div>
+                                <img src={img1} />
+                            </div>
+                            <div>
+                                <img src={img2} />
+                            </div>
+                            <div>
+                                <img src={img3} />
+                            </div>
+                            <div>
+                                <img src={img4} />
+                            </div>
+                            <div>
+                                <img src={img5} />
+                            </div>
+                            <div>
+                                <img src={img6} />
+                            </div>
+                        </Carousel>
+                    </div>
+
+                </div>
+
+            </div>
+            <div className="drawer-side">
+                <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
+                <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                    {/* Sidebar content here */}
+                    <li><a>User Product</a></li>
+                    <li><a>User Buy</a></li>
+                    <li><a>User Product</a></li>
+                    <li><a>User Buy</a></li>
+                    <li><a>User Product</a></li>
+                    <li><a>User Buy</a></li>
+                    <li><a>User Product</a></li>
+                    <li><a>User Buy</a></li>
+                    <li><a>User Product</a></li>
+                    <li><a>User Buy</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+    );
+};
+
+export default Header;
+
+{/* <div className='flex bg-white-300 '>
             <section className="row second-row">
                 <div>
                     <div className="  ">
@@ -83,22 +139,14 @@ const Header = () => {
                                 <div >
                                     <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Sales</Link>
                                 </div>
-
-
                             </div>
                         </div>
-                        {/* <ul className=" ">
-                            <Link to='/' className="mr-4 uppercase">Home</Link>
-                            <Link to='product' className="mr-4 uppercase">Product</Link>
-                            <Link to='productCategory' className="mr-4 uppercase">Product Category</Link>
-                            <Link to='userhome' className="mr-4 uppercase">Sign Up</Link>
-                            <Link to='adminhome' className="mr-4 uppercase">admin</Link>
-                            <Link to='login' className="mr-4 uppercase">Login</Link>
-                        </ul> */}
+                       
                     </div>
                 </div>
 
-                <div className="">{/* second-row-child */}
+
+                <div className="">
                     <div className='mr-20 mt-4'>
                         <Carousel>
                             <div>
@@ -129,8 +177,4 @@ const Header = () => {
 
 
 
-        </div>
-    );
-};
-
-export default Header;
+        </div> */}

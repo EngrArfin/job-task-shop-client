@@ -4,11 +4,9 @@ import {
 import Main from "../Layout/Main ";
 import Home from "../pages/Home/Home/Home";
 import Dashboard from "../Layout/Dashboard";
-import SignUp from "../pages/Home/Share/SignUp/SignUp";
 import ProdutCard from "../pages/Home/Share/ProdutCard/ProdutCard";
 import CategoryProduct from "../pages/Home/Share/CategoryProduct/CategoryProduct";
 import Login from "../pages/Home/Share/Login/Login";
-
 
 export const router = createBrowserRouter([
     {
@@ -28,16 +26,19 @@ export const router = createBrowserRouter([
             element: <CategoryProduct></CategoryProduct>
         },
         {
-          path: '/signup',
-          element: <SignUp></SignUp>
+          path: 'signup',
+          element: <Login></Login>
         },
         {
           path: 'login',
           element: <Login></Login>
+        },
+        {
+          path: 'admin',
+          element: <Login></Login>
         }
       ]
     },
-
 
     {
         path: 'dashboard',
@@ -47,13 +48,13 @@ export const router = createBrowserRouter([
             {
                 path: 'userhome',
                 element: <userHome></userHome>
-            }, 
+            }
             /* admin root */
-            {
+            /* {
                 path: 'adminhome',
                 element: <adminHome></adminHome>
 
-            }
+            } */
         ]
     }
   ]);
