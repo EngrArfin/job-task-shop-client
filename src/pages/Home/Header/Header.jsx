@@ -17,13 +17,13 @@ import 'daisyui/dist/full.css';
 
 const Header = () => {
     return (
-        <div className="drawer lg:drawer-open">
+        <div className=" drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center">
                 {/* Page content here */}
 
                 <div className="">
-                    <div className='mr-20 mt-4'>
+                    <div className='mr-10 '>
                         <Carousel>
                             <div>
                                 <img src={img1} />
@@ -49,20 +49,15 @@ const Header = () => {
                 </div>
 
             </div>
-            <div className="drawer-side">
+            <div className="drawer-side ml-20">
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                     {/* Sidebar content here */}
-                    <li><a>User Product</a></li>
+                    <li><Link to='/' className='mr-4 uppercase bg-red-500 text-white mt-16' >Home</Link></li>
+                    <li><Link to='product' className='mr-4 uppercase bg-red-500 text-white mt-1'>Product</Link></li>
+                    <li><Link to='productCategory' className='mr-4 uppercase bg-red-500 text-white mt-1'>Product Category</Link></li>
                     <li><a>User Buy</a></li>
-                    <li><a>User Product</a></li>
-                    <li><a>User Buy</a></li>
-                    <li><a>User Product</a></li>
-                    <li><a>User Buy</a></li>
-                    <li><a>User Product</a></li>
-                    <li><a>User Buy</a></li>
-                    <li><a>User Product</a></li>
-                    <li><a>User Buy</a></li>
+                    
                 </ul>
 
             </div>

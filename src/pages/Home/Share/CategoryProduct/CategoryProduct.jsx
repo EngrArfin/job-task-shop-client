@@ -26,7 +26,7 @@ const CategoryProduct = () => {
                     <Tab>Shari</Tab>
                 </TabList>
                 <TabPanel>
-                    <div className='grid md:grid-cols-3 gap-5'>
+                    <div className='grid md:grid-cols-4 gap-5'>
                         {
                             salad.map(item => <CategoryProductItem
                                 key={item.id}
@@ -36,9 +36,9 @@ const CategoryProduct = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid md:grid-cols-3 gap-5'>
+                    <div className='grid md:grid-cols-4 gap-5'>
                         {
-                            salad.map(item => <CategoryProductItem
+                            dessert.map(item => <CategoryProductItem
                                 key={item.id}
                                 item={item}
                             ></CategoryProductItem>)
@@ -46,9 +46,9 @@ const CategoryProduct = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid md:grid-cols-3 gap-5'>
+                    <div className='grid md:grid-cols-4 gap-5'>
                         {
-                            salad.map(item => <CategoryProductItem
+                            popular.map(item => <CategoryProductItem
                                 key={item.id}
                                 item={item}
                             ></CategoryProductItem>)
@@ -56,9 +56,9 @@ const CategoryProduct = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid md:grid-cols-3 gap-5'>
+                    <div className='grid md:grid-cols-4 gap-5'>
                         {
-                            salad.map(item => <CategoryProductItem
+                            soup.map(item => <CategoryProductItem
                                 key={item.id}
                                 item={item}
                             ></CategoryProductItem>)
@@ -66,9 +66,9 @@ const CategoryProduct = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid md:grid-cols-3 gap-5'>
+                    <div className='grid md:grid-cols-4 gap-5'>
                         {
-                            salad.map(item => <CategoryProductItem
+                            pizza.map(item => <CategoryProductItem
                                 key={item.id}
                                 item={item}
                             ></CategoryProductItem>)

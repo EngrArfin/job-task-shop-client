@@ -20,7 +20,7 @@ const ProdutCard = () => {
                 heading="Product"
                 subHeading="open fooer here"
             ></SectionTitle>
-            <div className='grid md:grid-cols-3 gap-5'>
+            <div className='grid md:grid-cols-4 gap-5'>
                 {
                     menu.map(item => <Produt
                         key={item._id}
