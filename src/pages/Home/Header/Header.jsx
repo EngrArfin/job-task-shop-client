@@ -45,7 +45,6 @@ const Header = () => {
                             </div>
                         </Carousel>
                     </div>
-
                 </div>
 
             </div>
@@ -53,10 +52,22 @@ const Header = () => {
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                     {/* Sidebar content here */}
-                    <li><Link to='/' className='mr-4 uppercase bg-red-500 text-white mt-16' >Home</Link></li>
+                    <li><Link to='/' className='mr-4 uppercase bg-red-500 text-white mt-4' >Home</Link></li>
                     <li><Link to='product' className='mr-4 uppercase bg-red-500 text-white mt-1'>Product</Link></li>
                     <li><Link to='productCategory' className='mr-4 uppercase bg-red-500 text-white mt-1'>Product Category</Link></li>
-                    <li><a>User Buy</a></li>
+                    <li><Link to='/' className='mr-4 uppercase bg-red-500 text-white mt-4' >Home</Link></li>
+                    <li><Link to='product' className='mr-4 uppercase bg-red-500 text-white mt-1'>Product</Link></li>
+                    <li><Link to='productCategory' className='mr-4 uppercase bg-red-500 text-white mt-1'>Product Category</Link></li>
+                    <li><Link to='/' className='mr-4 uppercase bg-red-500 text-white mt-4' >Home</Link></li>
+                    <li><Link to='product' className='mr-4 uppercase bg-red-500 text-white mt-1'>Product</Link></li>
+                    <li><Link to='productCategory' className='mr-4 uppercase bg-red-500 text-white mt-1'>Product Category</Link></li>
+                    <li><Link to='/' className='mr-4 uppercase bg-red-500 text-white mt-4' >Home</Link></li>
+                    <li><Link to='product' className='mr-4 uppercase bg-red-500 text-white mt-1'>Product</Link></li>
+                    <li><Link to='productCategory' className='mr-4 uppercase bg-red-500 text-white mt-1'>Product Category</Link></li>
+                    <li><Link to='/' className='mr-4 uppercase bg-red-500 text-white mt-4' >Home</Link></li>
+                    <li><Link to='product' className='mr-4 uppercase bg-red-500 text-white mt-1'>Product</Link></li>
+                    <li><Link to='productCategory' className='mr-4 uppercase bg-red-500 text-white mt-1'>Product Category</Link></li>
+                    
                     
                 </ul>
 

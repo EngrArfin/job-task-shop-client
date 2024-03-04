@@ -1,14 +1,23 @@
 import { Link } from 'react-router-dom';
 import photo1 from '../../../../assets/photo1.jpg'
+import { useContext } from 'react';
+import { AuthContext } from '../../../../AuthProvider/AuthProvider';
 
 const NavBar = () => {
- 
-    return (
 
-        <div className="fixed space-around navbar bg-red-600 max-w-8xl max-auto z-10 text-white	">
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+        .then(() =>{})
+        .catch(error => console.error(error));
+    }
+
+    return (
+        <div className="space-around navbar bg-red-600 max-w-8xl max-auto z-10 text-white	">
             <div className="navbar-start">
                 <div className='flex mr-20'>
-                    <div>
+                    <div to='/'>
                         <img src={photo1} alt="" className='w-12 rounded-full' />
                     </div>
 
@@ -24,11 +33,20 @@ const NavBar = () => {
                 <div className="navbar-center hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1 p-4">
 
-                        <Link className=" mr-4 uppercase">|</Link>
                         <Link to='signup' className="mr-4 uppercase">Sign Up</Link>
-                        <Link to='login' className="mr-4 uppercase">Login</Link>
+                        <Link to='/outseen' className="mr-4 uppercase">Out Seen</Link>
+                        <Link className=" mr-4 uppercase">|</Link>
+                        
 
-                       
+                        {
+                            user ? <>
+                            <button onClick={handleLogOut} className="mr-4 uppercase">LogOut</button>
+                            </> : <>
+                            <Link to='login' className="mr-4 uppercase">Login</Link>
+                            </>
+                        }
+
+
 
                     </ul>
                 </div>

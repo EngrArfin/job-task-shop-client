@@ -1,14 +1,45 @@
 import headerphoto from '../../../../assets/headerphoto.png';
 import { Link } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { useContext } from 'react';
+import { AuthContext } from '../../../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 const Login = () => {
+
+    const {signIn} = useContext(AuthContext);
 
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+        console.log(email, password);
+        
+        signIn(email, password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+
+            Swal.fire({
+                title: "User Login Successful",
+                showClass: {
+                  popup: `
+                    animate__animated
+                    animate__fadeInUp
+                    animate__faster
+                  `
+                },
+                hideClass: {
+                  popup: `
+                    animate__animated
+                    animate__fadeOutDown
+                    animate__faster
+                  `
+                }
+              });
+
+
+        })
 
 
     }

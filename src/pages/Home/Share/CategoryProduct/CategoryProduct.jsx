@@ -4,6 +4,8 @@ import 'react-tabs/style/react-tabs.css';
 import CategoryProductItem from '../CategoryProductItem/CategoryProductItem';
 import CategoryData from '../CategoryData/CategoryData';
 
+import headerphoto from '../../../../assets/headerphoto.png';
+
 const CategoryProduct = () => {
     const [tabMenu, setTabMenu] = useState(0);
     const [menu] = CategoryData();
@@ -16,9 +18,11 @@ const CategoryProduct = () => {
     const drinks = menu.filter((item) => item.category === "drinks");
 
     return (
-        <div>
-            <Tabs defaultIndex={tabMenu} onSelect={(index) => setTabMenu(index)}>
-                <TabList>
+        <div >
+            
+            <div>
+            <Tabs  defaultIndex={tabMenu} onSelect={(index) => setTabMenu(index)}>
+                <TabList >
                     <Tab>T- Shart</Tab>
                     <Tab>Shart</Tab>
                     <Tab>Pant</Tab>
@@ -76,6 +80,7 @@ const CategoryProduct = () => {
                     </div>
                 </TabPanel>
             </Tabs>
+            </div>
         </div>
     );
 };

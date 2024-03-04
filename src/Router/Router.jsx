@@ -4,9 +4,13 @@ import {
 import Main from "../Layout/Main ";
 import Home from "../pages/Home/Home/Home";
 import Dashboard from "../Layout/Dashboard";
-import ProdutCard from "../pages/Home/Share/ProdutCard/ProdutCard";
 import CategoryProduct from "../pages/Home/Share/CategoryProduct/CategoryProduct";
 import Login from "../pages/Home/Share/Login/Login";
+import SignUp from "../pages/Home/Share/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
+import ProdutCard from "../pages/Home/Share/ProdutCard/ProdutCard";
+import OutSeen from "../pages/Home/Share/OutSeen/OutSeen";
+
 
 export const router = createBrowserRouter([
     {
@@ -19,19 +23,24 @@ export const router = createBrowserRouter([
         },
         {
             path: '/product',
-            element: <ProdutCard></ProdutCard>
+            element: <PrivateRoute><ProdutCard></ProdutCard></PrivateRoute>
         },
         {
             path: '/productCategory',
             element: <CategoryProduct></CategoryProduct>
         },
-        {
-          path: 'signup',
-          element: <Login></Login>
-        },
+        
         {
           path: 'login',
           element: <Login></Login>
+        },
+        {
+          path: '/outseen',
+          element: <OutSeen></OutSeen>
+        },
+        {
+          path: 'signup',
+          element: <SignUp></SignUp>
         },
         {
           path: 'admin',
