@@ -1,28 +1,43 @@
-
 import headerphoto from '../../../../assets/headerphoto.png';
-import SocialLogin from '../SocialLogin/SocialLogin';
-import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useContext } from 'react';
 import { AuthContext } from "../../../../AuthProvider/AuthProvider";
-
+import Swal from 'sweetalert2';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
 
-    const { register, handleSubmit,watch, formState: { errors } } = useForm();
-    const { createUser } = useContext(AuthContext);
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { createUser, updateUserProfile} = useContext(AuthContext);
+    const navigate = useNavigate();
 
-
-    const onSubmit = (data) => {
+    const onSubmit = data => {
         console.log(data);
         createUser(data.email, data.password)
-        .then(result =>{
+        .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
+            updateUserProfile(data.name)
+
+            .then(() => {
+                console.log('profile update')
+                reset();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                     timer: 1500
+                  });
+                  navigate('/')
+            })
+
+            .catch(error => console.log(error))
         })
     }
 
-    console.log(watch("example"))
+/* console.log(watch("example")) */
       
     return (
         <div>
@@ -65,8 +80,6 @@ const SignUp = () => {
                                 {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                                 {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
                                 {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
-
-
                             </div>
                             <div className="form-control mt-6">
 

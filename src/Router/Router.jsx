@@ -7,8 +7,8 @@ import Dashboard from "../Layout/Dashboard";
 import CategoryProduct from "../pages/Home/Share/CategoryProduct/CategoryProduct";
 import Login from "../pages/Home/Share/Login/Login";
 import SignUp from "../pages/Home/Share/SignUp/SignUp";
-import PrivateRoute from "./PrivateRoute";
 import ProdutCard from "../pages/Home/Share/ProdutCard/ProdutCard";
+import PrivateRoute from "./PrivateRoute";
 import OutSeen from "../pages/Home/Share/OutSeen/OutSeen";
 
 
@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
         },
         {
           path: '/outseen',
-          element: <OutSeen></OutSeen>
+          element: <PrivateRoute><OutSeen></OutSeen></PrivateRoute>
         },
         {
           path: 'signup',
