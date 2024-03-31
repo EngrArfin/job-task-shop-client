@@ -4,8 +4,8 @@ import 'react-tabs/style/react-tabs.css';
 import CategoryProductItem from '../CategoryProductItem/CategoryProductItem';
 import CategoryData from '../CategoryData/CategoryData';
 
-import headerphoto from '../../../../assets/headerphoto.png';
-
+/* import headerphoto from '../../../../assets/headerphoto.png';
+ */
 const CategoryProduct = () => {
     const [tabMenu, setTabMenu] = useState(0);
     const [menu] = CategoryData();
