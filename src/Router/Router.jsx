@@ -50,8 +50,8 @@ export const router = createBrowserRouter([
     },
 
     {
+      element: <Dashboard></Dashboard>,
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
         children: [
             /* user root */
             {

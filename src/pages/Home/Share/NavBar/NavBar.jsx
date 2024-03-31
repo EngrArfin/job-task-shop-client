@@ -2,19 +2,22 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import photo1 from '../../../../assets/photo1.jpg'
 import { AuthContext } from '../../../../AuthProvider/AuthProvider';
+import useCab from '../../../User/hook/useCab';
 
 const NavBar = () => {
 
-    const {user, logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+    const { cab } = useCab();
 
     const handleLogOut = () => {
         logOut()
-        .then(() =>{})
-        .catch((error) => console.error(error));
+            .then(() => { })
+            .catch((error) => console.error(error));
     }
+    
 
     return (
-        <div className="space-around navbar bg-red-600 max-w-8xl max-auto z-10 text-white	">
+        <div className="space-around navbar  max-w-8xl max-auto z-10 text-black bg-white">
             <div className="navbar-start">
                 <div className='flex mr-20'>
                     <div to='/'>
@@ -35,14 +38,15 @@ const NavBar = () => {
                         <Link to='/' className='mr-4 uppercase' >Home</Link>
                         <Link to='/outseen' className="mr-4 uppercase">Out Seen</Link>
                         <Link to='signup' className="mr-4 uppercase">Sign Up</Link>
-                        <Link className=" mr-4 uppercase">|</Link>
+                        <Link className=" mr-4 uppercase"> |</Link>
                         
+
                         {
                             user ? (<>
-                            <span>{user?.displayName}</span>
-                            <button onClick={handleLogOut} className="mr-4 uppercase">LogOut</button>
+                                <span>{user?.displayName}</span>
+                                <button onClick={handleLogOut} className="mr-4 uppercase">LogOut</button>
                             </>) : (<>
-                            <Link to='/login' className="mr-4 uppercase">Login</Link>
+                                <Link to='/login' className="mr-4 uppercase">Login</Link>
                             </>)
                         }
                     </ul>
@@ -50,7 +54,7 @@ const NavBar = () => {
                 <Link to='dashboard' tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                     <div className="indicator ">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 " fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                        <span className="badge badge-sm indicator-item text-green-500">0</span>
+                        <span className="badge badge-sm indicator-item text-green-500">{cab?.length || 0}</span>
                     </div>
                 </Link>
 

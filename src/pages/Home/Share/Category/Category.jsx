@@ -11,7 +11,7 @@ const Category = () => {
             .then(data => setCategorys(data))
     }, [])
     return (
-        <div className='mt-20'>
+        <div className='mt-0 text-black bg-white'>
             <SectionTitle
                 heading="Product Category"
                 subHeading="Click here for difference category Product here"

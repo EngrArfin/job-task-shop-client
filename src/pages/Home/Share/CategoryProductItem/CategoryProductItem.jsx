@@ -1,22 +1,24 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../../AuthProvider/AuthProvider';
-import { data } from 'autoprefixer';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useCab from '../../../User/hook/useCab';
+
 
 const CategoryProductItem = ({ item }) => {
     /* const { name, image, details, rating } = item || {}; */
-    const { name, image, price, recipe, _id } = item || {};
+    const { name, image, price, recipe, _id } = item;
 
     const {user} = useContext(AuthContext);
+    const [, refetch] = useCab();
     const navigate = useNavigate();
     const location = useLocation();
 
-    const handleAddTocab = item =>{
+    const handleAddToCab = item =>{
         console.log(item);
         if(user && user.email){
-            const cabItem ={menuItemId: _id, name, image, price, email: user.email}
-            fetch('http://localhost:5000/cabs', {
+            const cabItem = {menuItemId: _id, name, image, price, email: user.email}
+            fetch('http://localhost:5000/cabs', { 
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -26,6 +28,7 @@ const CategoryProductItem = ({ item }) => {
             .then(res => res.json())
             .then(data => {
                 if(data.insertedId){
+                    refetch(); /* refetch to the cab */
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
@@ -59,7 +62,7 @@ const CategoryProductItem = ({ item }) => {
 
     return (
 
-        <div className="mt-10 card w-96 bg-base-100 shadow-xl">
+        <div className="mt-10 card w-96 bg-white shadow-xl">
             <figure><img src={image} alt="Shoes" /></figure>
             
             <div className=' absolute right-0  mr-4 mt-4'>
@@ -87,7 +90,7 @@ const CategoryProductItem = ({ item }) => {
                         <div className="badge badge-outline">{price}</div>
                     </div>
                     <div className="card-actions justify-end">
-                        <button onClick={() => handleAddTocab(item)} className="btn btn-primary">Buy Category Product</button>
+                        <button onClick={() => handleAddToCab(item)} className="btn btn-primary">Buy Category Product</button>
                     </div>
                 </div>
             </div>

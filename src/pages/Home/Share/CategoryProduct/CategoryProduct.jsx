@@ -18,7 +18,7 @@ const CategoryProduct = () => {
     const drinks = menu.filter((item) => item.category === "drinks");
 
     return (
-        <div >
+        <div  className='text-black bg-white'>
             
             <div>
             <Tabs  defaultIndex={tabMenu} onSelect={(index) => setTabMenu(index)}>

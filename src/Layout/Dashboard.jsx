@@ -3,11 +3,13 @@ import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
-        <div className="drawer lg:drawer-open">
+        <div className=" ml-20 drawer lg:drawer-open bg-white mx-auto">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col items-center justify-center">
+            <div className=" drawer-content flex flex-col items-center justify-center">
                 {/* Page content here */}
+                  
                 <Outlet></Outlet>
+
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
                 <div className="overflow-x-auto">
                     <table className="table">
@@ -20,6 +22,7 @@ const Dashboard = () => {
                                 <th>Position</th>
                                 <th>Job</th>
                                 <th>Favorite Color</th>
+                              
                             </tr>
                         </thead>
                         <tbody>
@@ -51,10 +54,7 @@ const Dashboard = () => {
                                     <button className="btn btn-ghost btn-xs">details</button>
                                 </th>
                             </tr>
-                            
                         </tbody>
-                       
-
                     </table>
                 </div>
 
