@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { FaHome, FaProductHunt, FaRocketchat, FaShopify } from "react-icons/fa";
-import { MdBookmarkBorder, MdDashboard, MdLightMode, MdLocalShipping, MdOutlineMenu, MdOutlinePayments, MdSettings } from "react-icons/md";
+import { MdBookmarkBorder, MdDashboard, MdLocalShipping, MdOutlineMenu, MdOutlinePayments, MdSettings } from "react-icons/md";
+import { TbBrandBooking } from "react-icons/tb";
 
 import useCab from '../pages/User/hook/useCab';
 
@@ -18,7 +19,6 @@ const Dashboard = () => {
             <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
                 Total Add Product: {cab.length}
             </label>
-            
             <div className="drawer-side">
                 
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>

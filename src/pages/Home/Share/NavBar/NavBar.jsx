@@ -40,13 +40,7 @@ const NavBar = () => {
                         <Link to='/outseen' className="mr-4 uppercase">Out Seen</Link>
                         <Link to='signup' className="mr-4 uppercase">Sign Up</Link>
                         <Link className=" mr-4 uppercase"> |</Link>
-                        <h1>
-                        {
-                    user?.displayName ? user.displayName : 'Back'
-                }
-                        </h1>
-
-
+                        
                         {
                             user ? (<>
                                 
