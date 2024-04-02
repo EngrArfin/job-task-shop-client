@@ -1,76 +1,47 @@
-import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+import { FaHome, FaProductHunt, FaRocketchat, FaShopify } from "react-icons/fa";
+import { MdBookmarkBorder, MdDashboard, MdLightMode, MdLocalShipping, MdOutlineMenu, MdOutlinePayments, MdSettings } from "react-icons/md";
+
+import useCab from '../pages/User/hook/useCab';
+
 
 const Dashboard = () => {
+    const [cab] = useCab();
     return (
         <div className=" ml-20 drawer lg:drawer-open bg-white mx-auto">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+
             <div className=" drawer-content flex flex-col items-center justify-center">
                 {/* Page content here */}
-                  
                 <Outlet></Outlet>
-
-                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-                <div className="overflow-x-auto">
-                    <table className="table">
-                        {/* head */}
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Profile</th>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Job</th>
-                                <th>Favorite Color</th>
-                              
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {/* row 1 */}
-                            <tr>
-                                <th>
-                                    1
-                                </th>
-                                <td>
-                                    <div className="flex items-center gap-3">
-                                        <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
-                                                <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className="font-bold">Hart Hagerty</div>
-                                            <div className="text-sm opacity-50">United States</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    Zemlak, Daniel and Leannon
-                                    <br />
-                                    <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                                </td>
-                                <td>Purple</td>
-                                <th>
-                                    <button className="btn btn-ghost btn-xs">details</button>
-                                </th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
             </div>
+            <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
+                Total Add Product: {cab.length}
+            </label>
+            
             <div className="drawer-side">
+                
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 min-h-full bg-yellow-900 text-red-content">
+                
+                <ul className="menu p-4 w-80 min-h-full bg-green-900 text-red-content">
                     {/* Sidebar content here */}
-                    <li><Link to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'>Home</Link></li>
-                    <li><Link to='/dashboard' className='mr-4 uppercase bg-sky-500 text-white mt-2'>User List</Link></li>
-                    <li><Link className='mr-4 uppercase bg-sky-500 text-white mt-1'>User Add List</Link></li>
-                    <li><Link className='mr-4 uppercase bg-sky-500 text-white mt-1'>User Add List</Link></li>
-                    <li><Link className='mr-4 uppercase bg-sky-500 text-white mt-1'>User Add List</Link></li>
-                    <li><Link className='mr-4 uppercase bg-sky-500 text-white mt-1'>User Add List</Link></li>
-                    <li><Link className='mr-4 uppercase bg-sky-500 text-white mt-1'>User Add List</Link></li>
-                    <li><Link className='mr-4 uppercase bg-sky-500 text-white mt-1'>User Add List</Link></li>
+
+                    
+                    <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'> <MdDashboard></MdDashboard> Dashboard</NavLink></li>
+                    <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><FaProductHunt /> Product</NavLink></li>
+                    <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><MdOutlinePayments />Payment Details</NavLink></li>
+                    <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><MdLocalShipping/>Shipping</NavLink></li>
+                    <li><NavLink to='/dashboard/mycab' className='mr-4 uppercase bg-sky-500 text-white mt-1' ><FaShopify> </FaShopify> Shop Cab
+                        <span className='ml-4'>{cab.length || 0}</span>
+                    </NavLink></li>
+                    <div className="divider"></div>
+                    <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><FaHome />Home</NavLink></li>
+                    <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><MdOutlineMenu /> Menu</NavLink></li>
+                    <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'> <MdBookmarkBorder /> Order Product</NavLink></li>
+                    <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'> <MdBookmarkBorder /> Order Product</NavLink></li>
+                    <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><MdSettings/>Setting</NavLink></li>
+                    <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><FaRocketchat />Chat</NavLink></li>
+
                 </ul>
 
             </div>

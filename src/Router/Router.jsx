@@ -10,6 +10,7 @@ import SignUp from "../pages/Home/Share/SignUp/SignUp";
 import ProdutCard from "../pages/Home/Share/ProdutCard/ProdutCard";
 import PrivateRoute from "./PrivateRoute";
 import OutSeen from "../pages/Home/Share/OutSeen/OutSeen";
+import MyCab from "../pages/User/MyCab/MyCab";
 
 
 export const router = createBrowserRouter([
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
             {
                 path: 'userhome',
                 element: <userHome></userHome>
+            },
+            {
+                path: 'mycab',
+                element: <MyCab></MyCab>
             }
             /* admin root */
             /* {
