@@ -17,7 +17,7 @@ const Dashboard = () => {
                 <Outlet></Outlet>
             </div>
             <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
-                Total Add Product: {cab.length}
+                Dashboard
             </label>
             <div className="drawer-side">
                 
@@ -34,12 +34,11 @@ const Dashboard = () => {
                     <li><NavLink to='/dashboard/mycab' className='mr-4 uppercase bg-sky-500 text-white mt-1' ><FaShopify> </FaShopify> Shop Cab
                         <span className='ml-4'>{cab.length || 0}</span>
                     </NavLink></li>
-                    <div className="divider"></div>
+                    <div className="divider text-white-900 bg-red "></div>
                     <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><FaHome />Home</NavLink></li>
                     <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><MdOutlineMenu /> Menu</NavLink></li>
                     <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'> <MdBookmarkBorder /> Order Product</NavLink></li>
-                    <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'> <MdBookmarkBorder /> Order Product</NavLink></li>
-                    <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><MdSettings/>Setting</NavLink></li>
+                     <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><MdSettings/>Setting</NavLink></li>
                     <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><FaRocketchat />Chat</NavLink></li>
 
                 </ul>
