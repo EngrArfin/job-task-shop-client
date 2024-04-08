@@ -10,7 +10,7 @@ const CategoryProductItem = ({ item }) => {
     const { name, image, price, recipe, _id } = item|| {};
 
     const {user} = useContext(AuthContext);
-    const [, refetch] = useCab();
+    const [ , refetch] = useCab();
     const navigate = useNavigate();
     const location = useLocation();
 

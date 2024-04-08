@@ -13,15 +13,13 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const onSubmit = data => {
-
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 updateUserProfile(data.name)
-
                     .then(() => {
-                        const saveUser = {name: data.name, email: data.email}
+                        const saveUser = { name: data.name, email: data.email }
                         fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {
@@ -29,7 +27,7 @@ const SignUp = () => {
                             },
                             body: JSON.stringify(saveUser)
                         })
-                            .then(req => req.json())
+                            .then(res => res.json())
                             .then(data => {
                                 if (data.insertedId) {
                                     reset();
@@ -40,15 +38,17 @@ const SignUp = () => {
                                         showConfirmButton: false,
                                         timer: 1500
                                     });
-                                    navigate('/')
-
+                                    navigate('/');
                                 }
                             })
-
-
                     })
-
-                    .catch(error => console.log(error))
+                    /* .catch(error => console.log(error))  */  
+                    .catch(error => {
+                        console.error('Fetch error:', error);
+                        
+                      });
+                    
+                    
             })
     }
 
