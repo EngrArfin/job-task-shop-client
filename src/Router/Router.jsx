@@ -11,6 +11,7 @@ import ProdutCard from "../pages/Home/Share/ProdutCard/ProdutCard";
 import PrivateRoute from "./PrivateRoute";
 import OutSeen from "../pages/Home/Share/OutSeen/OutSeen";
 import MyCab from "../pages/User/MyCab/MyCab";
+import AllUsers from "../pages/User/AllUsers/AllUsers";
 
 
 export const router = createBrowserRouter([
@@ -62,13 +63,14 @@ export const router = createBrowserRouter([
             {
                 path: 'mycab',
                 element: <MyCab></MyCab>
-            }
-            /* admin root */
-            /* {
-                path: 'adminhome',
-                element: <adminHome></adminHome>
+            },
 
-            } */
+            /* admin root */
+            {
+                path: 'allusers',
+                element: <AllUsers></AllUsers>
+
+            }
         ]
     }
   ]);
