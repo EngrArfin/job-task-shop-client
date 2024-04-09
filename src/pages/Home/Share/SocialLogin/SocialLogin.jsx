@@ -1,23 +1,34 @@
 import React, { useContext } from 'react';
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../../../AuthProvider/AuthProvider';
-import { useLocation, useNavigate} from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
 
-    const {googleSignIn} = useContext(AuthContext);
+    const { googleSignIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || "/";
 
-    const handleGoogleSignIn = () =>{
+    const handleGoogleSignIn = () => {
         googleSignIn()
-        .then(result => {
-            const loggedInUser = result.user;
-            console.log(loggedInUser);
-            navigate(from, { replace: true });
-        })
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(from, { replace: true });
+                    })
+            })
     }
 
     return (

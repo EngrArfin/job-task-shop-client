@@ -42,11 +42,11 @@ const SignUp = () => {
                                 }
                             })
                     })
-                    /* .catch(error => console.log(error))  */  
-                    .catch(error => {
+                    .catch(error => console.log(error)) 
+                    /* .catch(error => {
                         console.error('Fetch error:', error);
                         
-                      });
+                      }); */
                     
                     
             })
