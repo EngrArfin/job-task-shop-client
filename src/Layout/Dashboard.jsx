@@ -5,7 +5,6 @@ import { TbBrandBooking } from "react-icons/tb";
 
 import useCab from '../pages/User/hook/useCab';
 
-
 const Dashboard = () => {
     const [cab] = useCab();
 
@@ -22,13 +21,11 @@ const Dashboard = () => {
             <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
                 Open Dashboard
             </label>
+
             <div className="drawer-side">
-
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-
                 <ul className="menu p-4 w-80 min-h-full bg-green-900 text-red-content">
                     {/* Sidebar content here */}
-
                     {
                         isAdmin ? <>
                             {/* Admin Part */}
@@ -38,12 +35,11 @@ const Dashboard = () => {
                             <li><NavLink to="/dashboard/allusers" className='mr-4 uppercase bg-sky-500 text-white mt-2'><MdOutlinePayments />Manage Product</NavLink></li>
                             <li><NavLink to="/dashboard/userhome" className='mr-4 uppercase bg-sky-500 text-white mt-2'><MdLocalShipping />Manage Booking</NavLink></li>
                             <li><NavLink to="/dashboard/allusers" className='mr-4 uppercase bg-sky-500 text-white mt-2'><MdLocalShipping />All Users</NavLink></li>
-                            
+                                                        
                             <li><NavLink to='/dashboard/mycab' className='mr-4 uppercase bg-sky-500 text-white mt-1' ><FaShopify> </FaShopify> Shop Cab
                                 <span className='ml-4'>{cab.length || 0}</span>
                             </NavLink>
                             </li>
-
                         </> : <>
                             {/* User Part */}
                             <div className="divider bg-white ">User Pannel</div>
@@ -57,7 +53,6 @@ const Dashboard = () => {
                             </li>
                         </>
                     }
-
                     <div className="divider bg-white ">Both Pannel</div>
                     <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><FaHome />Home</NavLink></li>
                     <li><NavLink to='/' className='mr-4 uppercase bg-sky-500 text-white mt-2'><MdOutlineMenu /> Menu</NavLink></li>

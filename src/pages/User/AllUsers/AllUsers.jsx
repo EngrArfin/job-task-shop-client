@@ -6,62 +6,62 @@ import Swal from 'sweetalert2';
 
 /* import alluser from '../hook/alluser'; */
 
-const AllUsers = () => {  
-    
+const AllUsers = () => {
+
     /* const { data: users = [], refetch } = useQuery(['users'], async () => {
         const res = await fetch('http://localhost:5000/users')
         return res.json();
     }) */
-   
-   const [users, refetch] = userData();
 
-   const handleMakeAdmin = user => {
-    fetch(`http://localhost:5000/users/admin/${user._id}`,{
-        method: 'PATCH'
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        if(data.modifiedCount){
-            refetch();
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: `${user.name} is admin`,
-                showConfirmButton: false,
-                timer: 1500
-              });
-        }
-    })
+    const [users, refetch] = userData();
 
-   }
+    const handleMakeAdmin = user => {
+        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${user.name} is admin`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
 
-   const handleDelete = user => {
+    }
 
-    Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
-      }).then((result) => {
-        if (result.isConfirmed) {
-          fetch(`http://localhost:5000/users/${user._id}`, {
-            method: 'DELETE'
-          })
-          .then(res => res.json())
-          .then(data =>{
-            if (data.deletedCount > 0 ) {
-                refetch();
-                Swal.fire("Deleted!", "Your file has been deleted.", "success");
-              } 
-          })
-        }
-      });
+    const handleDelete = user => {
 
-}
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/users/${user._id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+                        }
+                    })
+            }
+        });
+
+    }
 
     return (
         <div>
@@ -90,10 +90,10 @@ const AllUsers = () => {
                                 <td>
                                     {
                                         user.role === 'admin' ? 'admin' :
-                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-red-500 text-white">
-                                        <FaUserShield></FaUserShield>
-                                    </button>
-                                        
+                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-red-500 text-white">
+                                                <FaUserShield></FaUserShield>
+                                            </button>
+
                                     }
                                 </td>
                                 <td>
