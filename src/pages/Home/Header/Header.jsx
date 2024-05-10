@@ -42,13 +42,13 @@ const Header = () => {
                                 <img src={img1} />
                             </div>
                             <div>
-                                <img src={img2} />
+                                <img src={img6} />
                             </div>
                             <div>
                                 <img src={img3} />
                             </div>
                             <div>
-                                <img src={img4} />
+                                <img src={img6} />
                             </div>
                             <div>
                                 <img src={img5} />
@@ -125,19 +125,17 @@ const Header = () => {
                     <li><Link to='/' className='mr-4 uppercase mt-4' > <MdHome />Home</Link></li>
                     <li><Link to='product' className='mr-4 uppercase mt-1'><FaProductHunt />Product</Link></li>
                     <li><Link to='productCategory' className='mr-4 uppercase mt-1'><MdCategory />Product Category</Link></li>
-                    <li><Link to='/' className='mr-4 uppercase mt-4' >Home</Link></li>
-                    <li><Link to='product' className='mr-4 uppercase mt-1'>Product</Link></li>
-                    <li><Link to='productCategory' className='mr-4 uppercase mt-1'>Product Category</Link></li>
-                    <li><Link to='/' className='mr-4 uppercase mt-4' >Home</Link></li>
-                    <li><Link to='product' className='mr-4 uppercase mt-1'>Product</Link></li>
-                    <li><Link to='productCategory' className='mr-4 uppercase mt-1'>Product Category</Link></li>
-                    <li><Link to='/' className='mr-4 uppercase mt-4' >Home</Link></li>
-                    <li><Link to='product' className='mr-4 uppercase mt-1'>Product</Link></li>
-                    <li><Link to='productCategory' className='mr-4 uppercase mt-1'>Product Category</Link></li>
-                    <li><Link to='/' className='mr-4 uppercase mt-4' >Home</Link></li>
-                    <li><Link to='product' className='mr-4 uppercase mt-1'>Product</Link></li>
-                    <li><Link to='productCategory' className='mr-4 uppercase mt-1'>Product Category</Link></li>
-
+                    <li><Link to='/' className='mr-4 uppercase mt-4' ><MdHome />Home</Link></li>
+                    <li><Link to='product' className='mr-4 uppercase mt-1'><FaProductHunt />Product</Link></li>
+                    <li><Link to='productCategory' className='mr-4 uppercase mt-1'><MdCategory />Product Category</Link></li>
+                    <li><Link to='/' className='mr-4 uppercase mt-4' ><MdHome />Home</Link></li>
+                    <li><Link to='product' className='mr-4 uppercase mt-1'><FaProductHunt />Product</Link></li>
+                    <li><Link to='productCategory' className='mr-4 uppercase mt-1'><MdCategory />Product Category</Link></li>
+                    <li><Link to='/' className='mr-4 uppercase mt-4' ><MdHome />Home</Link></li>
+                    <li><Link to='product' className='mr-4 uppercase mt-1'><FaProductHunt />Product</Link></li>
+                    <li><Link to='productCategory' className='mr-4 uppercase mt-1'><MdCategory />Product Category</Link></li>
+                    <li><Link to='productCategory' className='mr-4 uppercase mt-1'><MdCategory />Product Category</Link></li>
+                    <li><Link to='productCategory' className='mr-4 uppercase mt-1'><MdCategory />Product Category</Link></li>
                 </ul>
 
             </div>

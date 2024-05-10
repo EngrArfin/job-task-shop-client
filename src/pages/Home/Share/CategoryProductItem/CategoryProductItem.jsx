@@ -7,7 +7,7 @@ import useCab from '../../../User/hook/useCab';
 
 const CategoryProductItem = ({ item }) => {
     /* const { name, image, details, rating } = item || {}; */
-    const { name, image, price, recipe, _id } = item|| {};
+    const { name, image, price, description, _id } = item|| {};
 
     const {user} = useContext(AuthContext);
     const [ , refetch] = useCab();
@@ -82,7 +82,7 @@ const CategoryProductItem = ({ item }) => {
                     {name}
                     <div className="badge badge-secondary">{price}</div>
                 </h2>
-                <p>{recipe}</p>
+                <p>{description}</p>
 
                 <div>
                     <div className="card-actions justify-start">
@@ -90,7 +90,7 @@ const CategoryProductItem = ({ item }) => {
                         <div className="badge badge-outline">{price}</div>
                     </div>
                     <div className="card-actions justify-end">
-                        <button onClick={() => handleAddToCab(item)} className="btn btn-primary">Shoping</button>
+                        <button onClick={() => handleAddToCab(item)} className="btn btn-primary border-0 border-b-4 mt-4">Shoping</button>
                     </div>
                 </div>
             </div>
