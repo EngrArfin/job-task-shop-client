@@ -7,43 +7,43 @@ import useCab from '../../../User/hook/useCab';
 
 const CategoryProductItem = ({ item }) => {
     /* const { name, image, details, rating } = item || {}; */
-    const { name, image, price, description, _id } = item|| {};
+    const { name, image, price, description, _id } = item || {};
 
-    const {user} = useContext(AuthContext);
-    const [ , refetch] = useCab();
+    const { user } = useContext(AuthContext);
+    const [, refetch] = useCab();
     const navigate = useNavigate();
     const location = useLocation();
 
-    const handleAddToCab = item =>{
+    const handleAddToCab = item => {
         console.log(item);
-        if(user && user.email){
-            const cabItem = {menuItemId: _id, name, image, price, email: user.email}
-            fetch('http://localhost:5000/cabs', { 
+        if (user && user.email) {
+            const cabItem = { menuItemId: _id, name, image, price, email: user.email }
+            fetch('http://localhost:5000/cabs', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
                 },
                 body: JSON.stringify(cabItem)
             })
-            .then(res => res.json())
-            .then(data => {
-                if(data.insertedId){
-                    refetch(); /* refetch to the cab */
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: "Product add on cab",
-                        showConfirmButton: false,
-                        timer: 1500
-                      });
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        refetch(); /* refetch to the cab */
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Product add on cab",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
 
-                }
-            })
+                    }
+                })
         }
 
 
 
-        else{
+        else {
             Swal.fire({
                 title: "Login for Order?",
                 icon: "warning",
@@ -51,11 +51,11 @@ const CategoryProductItem = ({ item }) => {
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Login here"
-              }).then((result) => {
+            }).then((result) => {
                 if (result.isConfirmed) {
-                  navigate('/login', {state: {form: location}})
+                    navigate('/login', { state: { form: location } })
                 }
-              });
+            });
 
         }
     }
@@ -64,19 +64,29 @@ const CategoryProductItem = ({ item }) => {
 
         <div className="mt-10 card w-96 bg-white shadow-xl">
             <figure><img src={image} alt="Shoes" /></figure>
-            
+            <div >
+                <p className="  bg-green-900 text-white">
+                    20% off / <sup className='bg-red-500 '>Limioted Time deal</sup>
+                </p>
+                
+            </div>
+
             <div className=' absolute right-0  mr-4 mt-4'>
                 <div>
-                    <p className="absolute right-0  mr-4 mt-4 bg-yellow-900 text-white">
+                    {<p className="absolute right-0  mr-4 mt-4 bg-green-900 text-white">
                         ${price}
-                    </p>
+                    </p>}
                 </div>
+                <br />
+                <br />
                 <div>
-                    <p className="absolute right-0  mr-4 mt-4 bg-yellow-900 text-white">
-                        ${price}
+                    <p className="absolute right-0  mr-4 mb-10 bg-red-700 text-white">
+                        <del>1600</del>
                     </p>
                 </div>
+
             </div>
+
             <div className="card-body">
                 <h2 className="card-title">
                     {name}
@@ -87,7 +97,7 @@ const CategoryProductItem = ({ item }) => {
                 <div>
                     <div className="card-actions justify-start">
                         <div className="badge badge-outline">{price}</div>
-                        <div className="badge badge-outline">{price}</div>
+                        {<div className="badge badge-outline">{price}</div>}
                     </div>
                     <div className="card-actions justify-end">
                         <button onClick={() => handleAddToCab(item)} className="btn btn-primary border-0 border-b-4 mt-4">Shoping</button>

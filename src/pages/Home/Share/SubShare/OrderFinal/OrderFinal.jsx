@@ -42,6 +42,9 @@ const OrderFinal = () => {
                     </div>
                 </div>
             </div>
+            <div>
+                <h2>Related Products</h2>
+            </div>
         </div>
     );
 };
