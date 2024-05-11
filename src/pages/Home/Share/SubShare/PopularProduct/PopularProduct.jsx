@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import SectionTitle from '../SectionTitle/SectionTitle';
-import { Link } from 'react-router-dom';
-/* import Rating from 'react-rating'; */
-/* import { Rating } from "@smastrom/react-rating"; */
-
 import '@smastrom/react-rating/style.css'
 import { Rating } from '@smastrom/react-rating';
+import { useEffect, useState } from 'react';
+import SectionTitle from '../../SectionTitle/SectionTitle';
+import { Link } from 'react-router-dom';
 
-const Category = () => {
+const PopularProduct  = () => {
     const [categorys, setCategorys] = useState([]);
 
     useEffect(() => {
@@ -16,28 +13,28 @@ const Category = () => {
             .then(data => setCategorys(data))
     }, [])
     return (
-        <Link to='/' className='mt-3 mb-4 text-black bg-white-500'>
-            <SectionTitle className='mb-10'
-                heading=" Shop Product Category"
+        <div className='mt-5 text-black bg-white'>
+            <SectionTitle className='mt-5'
+                heading=" Shop Popular Product"
             /* subHeading="Click here for difference category Product here" */
             ></SectionTitle>
-            <div className='grid md:grid-cols-6 gap-5'>
+            <div className='grid md:grid-cols-5 gap-3 '>
                 {
                     categorys.map(category => <div
                         key={category._id}
                     >
-                        <div className="ml-2  card w-50 h-55 bg-white-500 shadow-xl ">
-                            <figure><img src={category.image} alt="Shoes" /></figure>
+                        <div className="card w-75 h-110 bg-white-500 shadow-xl ">
+                            <figure className='border-3'><img src={category.image} alt="Shoes" /></figure>
                             <div className="card-body">
-                                <h2 className="card-title justify-center">{category.name}</h2>
-                                {/* <div className="badge badge-secondary">{category.rating}</div> */}
-                                {/* <p>{category.description}</p> */}
+                                <h2 className="card-title">{category.name}</h2>
+                                <div className="badge badge-secondary">{category.price}</div>
+                                <p>{category.description}</p>
                                 
-                                {/* <Rating
+                                <Rating
                                     style={{ maxWidth: 180 }}
                                     value={category.rating}
                                     readOnly
-                                /> */}
+                                />
                                 
                                 
 
@@ -46,12 +43,15 @@ const Category = () => {
                                 </div> */}
                             </div>
                         </div>
+
+
+
                     </div>)
                 }
             </div>
 
-        </Link>
+        </div>
     );
 };
 
-export default Category;
+export default PopularProduct ;

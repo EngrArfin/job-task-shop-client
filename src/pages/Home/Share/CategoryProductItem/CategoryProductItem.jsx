@@ -4,7 +4,6 @@ import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useCab from '../../../User/hook/useCab';
 
-
 const CategoryProductItem = ({ item }) => {
     /* const { name, image, details, rating } = item || {}; */
     const { name, image, price, description, _id } = item || {};
@@ -68,9 +67,7 @@ const CategoryProductItem = ({ item }) => {
                 <p className="  bg-green-900 text-white">
                     20% off / <sup className='bg-red-500 '>Limioted Time deal</sup>
                 </p>
-                
             </div>
-
             <div className=' absolute right-0  mr-4 mt-4'>
                 <div>
                     {<p className="absolute right-0  mr-4 mt-4 bg-green-900 text-white">
@@ -99,8 +96,14 @@ const CategoryProductItem = ({ item }) => {
                         <div className="badge badge-outline">{price}</div>
                         {<div className="badge badge-outline">{price}</div>}
                     </div>
-                    <div className="card-actions justify-end">
-                        <button onClick={() => handleAddToCab(item)} className="btn btn-primary border-0 border-b-4 mt-4">Shoping</button>
+                    <div className='flex justify-center  '>
+                    <div className="card-actions text-white ">
+                        <button onClick={() => handleAddToCab(item)} className="bg-blue-600  border-0 border-b-4 mt-4">Buy Now </button>
+                    </div> 
+                    <div className="card-actions ml-5 text-white">
+                        <button onClick={() => handleAddToCab(item)} className=" bg-yellow-500  border-0 border-b-4 mt-4">Add To Cart</button>
+                    </div>
+
                     </div>
                 </div>
             </div>
