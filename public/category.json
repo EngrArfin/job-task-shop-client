@@ -1,111 +1,137 @@
 [
-    {
-        "_id": "642c155b2c4774f05c36eeaa",
-        "name": " Shirt for Men",
-        "description": "This adorable Frog Child T-shirt is not only stylish but also incredibly comfortable, making it perfect for your little one's everyday adventures.",
-        "image": "https://i.ibb.co/kK9mF0x/1-girls.png",
-        "category": "T-shirt",
-        "rating": 3,
-        "price": 1500
-        
-    },
-    {
-        "_id": "642c155b2c4774f05c36eeb9",
-        "name": "Formal Shirt",
-        "description": "Look sharp and sophisticated in this Formal Shirt, designed for the modern gentleman who values both style and elegance.",
-        "image": "https://i.ibb.co/Lvf7Lyd/1-shart.png",
-        "category": "Shirt",
-        "rating": 5,
-        "price": 1499
-    },
-    {
-        "_id": "642c155b2c4774f05c36ee7c",
-        "name": "Jince Shorts",
-        "description": "Elevate your casual look with these trendy Jince Shorts, crafted for comfort and style to keep you feeling confident all day long.",
-        "image": "https://i.ibb.co/NKBt0PT/2-girls.png",
-        "category": "Shorts",
-        "rating": 5,
-        "price": 2299
-    },
-    {
-        "_id": "642c155b2c4774f05c36ee88",
-        "name": "Pant Polo",
-        "description": "Experience the perfect blend of style and comfort with our Pant Polo, tailored for those who appreciate timeless sophistication.",
-        "image": "https://i.ibb.co/LxqFFbQ/2-pant.png",
-        "category": "Pants",
-        "rating": 4,
-        "price": 2200
-    },
-    {
-        "_id": "642c155b2c4774f05c36ee7a",
-        "name": "Pant Stress",
-        "description": "Make a statement with our fashionable Pant Stress, designed to keep you comfortable and stylish from day to night.",
-        "image": "https://i.ibb.co/hLjdd7f/1-pant.png",
-        "category": "Pants",
-        "rating": 5,
-        "price": 2200
-    },
-    {
-        "_id": "642c155b2c4774f05c36ee8c",
-        "name": "Shirt",
-        "description": "Versatile and comfortable, this Shirt is a wardrobe essential for any occasion, offering effortless style and sophistication.",
-        "image": "https://i.ibb.co/XVQyh4V/3pant.png",
-        "category": "Shirt",
-        "rating": 5,
-        "price": 1499
-    },
-    {
-        "_id": "642c155b2c4774f05c36ee94",
-        "name": "Pant Stress",
-        "description": "Step out in style with our chic Pant Stress, featuring a flattering fit and premium quality materials for a luxurious look and feel.",
-        "image": "https://i.ibb.co/tY2b094/4-pant.png",
-        "category": "Pants",
-        "rating": 3,
-        "price": 2500
-    },
-    {
-        "_id": "642c155b2c4774f05c36ee9e",
-        "name": "T-shirt",
-        "description": "Stay cool and comfortable in our classic T-shirt, perfect for everyday wear and versatile enough to complement any outfit.",
-        "image": "https://i.ibb.co/SmGhz4X/t-shart.png",
-        "category": "T-shirt",
-        "rating": 4,
-        "price": 600
-    },
-    {
-        "_id": "642c155b2c4774f05c36eea6",
-        "name": "Sport T-shirt",
-        "description": "Achieve peak performance in our Sport T-shirt, engineered with breathable fabric to keep you cool and dry during your workouts and training sessions.",
-        "image": "https://i.ibb.co/6Ysbhmj/t-shart2.png",
-        "category": "T-shirt",
-        "rating": 5,
-        "price": 400
-    },
-    {
-        "_id": "642c155b2c4774f05c36eeaf",
-        "name": "General T-shirt",
-        "description": "Experience unbeatable comfort in our General T-shirt, designed for everyday wear with a focus on quality and style.",
-        "image": "https://i.ibb.co/YP2XYgX/t-shart3.png",
-        "category": "T-shirt",
-        "rating": 4,
-        "price": 250
-    },
-    {
-        "_id": "642c155b2c4774f05c36ee89",
-        "name": "Black Blazer",
-        "description": "Elevate your formal attire with our Black Blazer, exuding sophistication and refinement for a polished and professional look.",
-        "image": "https://i.ibb.co/tCjYVJn/t-shart4.png",
-        "category": "Blazer",
-        "rating": 3,
-        "price": 3500
-    },
-    {
-        "_id": "642c155b2c4774f05c36ee7c",
-        "name": "Jince Shorts",
-        "description": "Elevate your casual look with these trendy Jince Shorts, crafted for comfort and style to keep you feeling confident all day long.",
-        "image": "https://i.ibb.co/NKBt0PT/2-girls.png",
-        "category": "Shorts",
-        "rating": 5,
-        "price": 2299
-    }
+  {
+    "_id": "642c155b2c4774f05c36eeaa",
+    "name": " Shirt for Men",
+    "description": "This adorable Frog Child T-shirt is not only stylish but also incredibly comfortable, making it perfect for your little one's everyday adventures.",
+    "image": "https://i.ibb.co/kK9mF0x/1-girls.png",
+    "category": "T-shirt",
+    "rating": 3,
+    "price": 1500
+  },
+  {
+    "_id": "642c155b2c4774f05c36eeb9",
+    "name": "Formal Shirt",
+    "description": "Look sharp and sophisticated in this Formal Shirt, designed for the modern gentleman who values both style and elegance.",
+    "image": "https://i.ibb.co/Lvf7Lyd/1-shart.png",
+    "category": "Shirt",
+    "rating": 3,
+    "price": 1499
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee7c",
+    "name": "Jince Shorts",
+    "description": "Elevate your casual look with these trendy Jince Shorts, crafted for comfort and style to keep you feeling confident all day long.",
+    "image": "https://i.ibb.co/NKBt0PT/2-girls.png",
+    "category": "Shorts",
+    "rating": 5,
+    "price": 2299
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee88",
+    "name": "Pant Polo",
+    "description": "Experience the perfect blend of style and comfort with our Pant Polo, tailored for those who appreciate timeless sophistication.",
+    "image": "https://i.ibb.co/LxqFFbQ/2-pant.png",
+    "category": "Pants",
+    "rating": 4,
+    "price": 2200
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee7a",
+    "name": "Pant Stress",
+    "description": "Make a statement with our fashionable Pant Stress, designed to keep you comfortable and stylish from day to night.",
+    "image": "https://i.ibb.co/hLjdd7f/1-pant.png",
+    "category": "Pants",
+    "rating": 5,
+    "price": 2200
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee8c",
+    "name": "Shirt",
+    "description": "Versatile and comfortable, this Shirt is a wardrobe essential for any occasion, offering effortless style and sophistication.",
+    "image": "https://i.ibb.co/XVQyh4V/3pant.png",
+    "category": "Shirt",
+    "rating": 5,
+    "price": 1499
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee94",
+    "name": "Pant Stress",
+    "description": "Step out in style with our chic Pant Stress, featuring a flattering fit and premium quality materials for a luxurious look and feel.",
+    "image": "https://i.ibb.co/tY2b094/4-pant.png",
+    "category": "Pants",
+    "rating": 3,
+    "price": 2500
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee9e",
+    "name": "T-shirt",
+    "description": "Stay cool and comfortable in our classic T-shirt, perfect for everyday wear and versatile enough to complement any outfit.",
+    "image": "https://i.ibb.co/SmGhz4X/t-shart.png",
+    "category": "T-shirt",
+    "rating": 4,
+    "price": 600
+  },
+  {
+    "_id": "642c155b2c4774f05c36eea6",
+    "name": "Sport T-shirt",
+    "description": "Achieve peak performance in our Sport T-shirt, engineered with breathable fabric to keep you cool and dry during your workouts and training sessions.",
+    "image": "https://i.ibb.co/6Ysbhmj/t-shart2.png",
+    "category": "T-shirt",
+    "rating": 5,
+    "price": 400
+  },
+  {
+    "_id": "642c155b2c4774f05c36eeaf",
+    "name": "General T-shirt",
+    "description": "Experience unbeatable comfort in our General T-shirt, designed for everyday wear with a focus on quality and style.",
+    "image": "https://i.ibb.co/YP2XYgX/t-shart3.png",
+    "category": "T-shirt",
+    "rating": 4,
+    "price": 250
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee89",
+    "name": "Black Blazer",
+    "description": "Elevate your formal attire with our Black Blazer, exuding sophistication and refinement for a polished and professional look.",
+    "image": "https://i.ibb.co/tCjYVJn/t-shart4.png",
+    "category": "Blazer",
+    "rating": 3,
+    "price": 3500
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee7c",
+    "name": "Jince Shorts",
+    "description": "Elevate your casual look with these trendy Jince Shorts, crafted for comfort and style to keep you feeling confident all day long.",
+    "image": "https://i.ibb.co/NKBt0PT/2-girls.png",
+    "category": "Shorts",
+    "rating": 5,
+    "price": 2299
+  },
+  {
+    "_id": "642c155b2c4774f05c36eeaa",
+    "name": " Shirt for Men",
+    "description": "This adorable Frog Child T-shirt is not only stylish but also incredibly comfortable, making it perfect for your little one's everyday adventures.",
+    "image": "https://i.ibb.co/kK9mF0x/1-girls.png",
+    "category": "T-shirt",
+    "rating": 3,
+    "price": 1500
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee9e",
+    "name": "T-shirt",
+    "description": "Stay cool and comfortable in our classic T-shirt, perfect for everyday wear and versatile enough to complement any outfit.",
+    "image": "https://i.ibb.co/SmGhz4X/t-shart.png",
+    "category": "T-shirt",
+    "rating": 4,
+    "price": 600
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee8c",
+    "name": "Shirt",
+    "description": "Versatile and comfortable, this Shirt is a wardrobe essential for any occasion, offering effortless style and sophistication.",
+    "image": "https://i.ibb.co/XVQyh4V/3pant.png",
+    "category": "Shirt",
+    "rating": 4,
+    "price": 1499
+  }
 ]

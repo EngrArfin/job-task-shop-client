@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Produt from '../Produt/Produt';
 import SectionTitle from '../SectionTitle/SectionTitle';
-import CategoryProduct from '../CategoryProduct/CategoryProduct';
+
 
 const ProdutCard = () => {
     const [menu, setMenu] = useState([]);
