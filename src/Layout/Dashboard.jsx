@@ -8,20 +8,20 @@ import {
   MdOutlinePayments,
   MdSettings,
 } from "react-icons/md";
-import { TbBrandBooking } from "react-icons/tb";
-
 import useCab from "../pages/User/hook/useCab";
+//import useAdmin from "../pages/User/hook/useAdmin";
 
 const Dashboard = () => {
   const [cab] = useCab();
 
   const isAdmin = true;
+  //const [isAdmin] = useAdmin();
 
   return (
-    <div className=" ml-20 drawer lg:drawer-open bg-white mx-auto">
+    <div className=" ml-20 pl-20 drawer  lg:drawer-open bg-white">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
-      <div className=" drawer-content flex flex-col items-center justify-center">
+      <div className="w-full ml-20 pr-20 drawer-content flex flex-col items-center justify-center">
         {/* Page content here */}
         <Outlet></Outlet>
       </div>
@@ -38,7 +38,8 @@ const Dashboard = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu p-4 w-80 min-h-full bg-green-900 text-red-content">
+
+        <ul className="menu  p-4 w-80 min-h-full bg-green-900 text-red-content">
           {/* Sidebar content here */}
           {isAdmin ? (
             <>
@@ -55,10 +56,10 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/dashboard/allusers"
+                  to="/dashboard/addProduct"
                   className="mr-4 uppercase bg-sky-500 text-white mt-2"
                 >
-                  <FaProductHunt /> Add Item
+                  <FaProductHunt /> Add Product
                 </NavLink>
               </li>
               <li>

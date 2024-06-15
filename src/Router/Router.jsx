@@ -12,6 +12,7 @@ import OutSeen from "../pages/Home/Share/OutSeen/OutSeen";
 import MyCab from "../pages/User/MyCab/MyCab";
 import AllUsers from "../pages/User/AllUsers/AllUsers";
 import OrderFinal from "../pages/Home/Share/SubShare/OrderFinal/OrderFinal";
+import AddProdut from "../pages/Admin/AddProdut/AddProdut";
 
 export const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ export const router = createBrowserRouter([
       {
         path: "allusers",
         element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "addProduct",
+        element: <AddProdut></AddProdut>,
       },
     ],
   },

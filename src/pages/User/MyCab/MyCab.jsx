@@ -36,7 +36,7 @@ const MyCab = () => {
   };
 
   return (
-    <div className="w-full mt-10">
+    <div className="w-full mt-10 w-full px-20 pl-20">
       <Helmet>
         <title>SA Shop | Dashboard</title>
       </Helmet>
