@@ -1,8 +1,14 @@
-## SA Shop
+## SAR Shop Project
 
-# React + Vite
 
 SAR Shop is a sleek and responsive web application hosted at SAR Shop, designed to showcase and sell a curated selection of clothing and electronic products. The platform offers a clean, user-friendly interface where customers can easily explore product categories, add items to their cart, and complete purchases securely. With its modern design and efficient functionality, SAR Shop aims to provide a smooth and enjoyable online shopping experience. The project is built using the latest web technologies, ensuring fast load times and a consistent experience across all devices.
+
+---------------------Live Link-----------------------
+Frontend Live link:  https://job-task-6e505.web.app
+Backend Live link: https://sar-shop-server.vercel.app
+---------------------Github Link--------------------
+Git Client : https://github.com/EngrArfin/job-task-shop-client
+Git Server : https://github.com/EngrArfin/job-task-shop-server
 
 ## Tech Stack
 
