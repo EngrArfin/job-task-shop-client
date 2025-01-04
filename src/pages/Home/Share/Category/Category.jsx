@@ -16,7 +16,6 @@ const Category = () => {
       <SectionTitle
         className="mb-10"
         heading=" Shop Product Category"
-        /* subHeading="Click here for difference category Product here" */
       ></SectionTitle>
       <div className="grid md:grid-cols-6 gap-5">
         {categorys.map((category) => (

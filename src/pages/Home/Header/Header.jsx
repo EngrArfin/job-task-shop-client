@@ -11,11 +11,21 @@ import { Link } from "react-router-dom";
 
 import "../Header/Header.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import "daisyui/dist/full.css";
-import { FaProductHunt } from "react-icons/fa";
-import { MdCategory, MdHome } from "react-icons/md";
+import { FaBaby, FaHatCowboy, FaProductHunt } from "react-icons/fa";
+import { GiClothes } from "react-icons/gi";
+
+import {
+  MdAppSettingsAlt,
+  MdChat,
+  MdContactPhone,
+  MdGirl,
+  MdHome,
+  MdImportantDevices,
+  MdLaptopChromebook,
+  MdOutlineElectricalServices,
+  MdSmartphone,
+} from "react-icons/md";
 import { useState } from "react";
 
 const Header = () => {
@@ -66,80 +76,6 @@ const Header = () => {
           className="drawer-overlay"
         ></label>
         <ul className="menu p-4 w-80 min-h-full text-black bg-white">
-          {/* Sidebar content here */}
-          {/* <div className="navbar bg-base-100">
-                        
-                            <div className="dropdown">
-                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[2] p-2 shadow bg-base-100 rounded-box w-52">
-                                    <li><Link><MdHome />Home 1</Link></li>
-                                    <li>
-                                        <Link className='mr-4 uppercase mt-4'><MdHome />Home</Link>
-                                        <ul className="p-2">
-                                            <li><a>Home 1</a></li>
-                                            <li><a>Home 2</a></li>
-                                        </ul>
-                                    </li>                    
-                                </ul>
-                            </div>
-                            
-                      
-                        <div className="navbar-center hidden lg:flex">
-                            <ul className="menu menu-horizontal px-1">
-                                
-                                <li>
-                                    <details>
-                                        <summary><MdHome />Home</summary>
-                                        <ul className="p-2">
-                                            <li><a>Home 1</a></li>
-                                            <li><a>Home 2</a></li>
-                                        </ul>
-                                    </details>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                        
-                    </div> */}
-          <div className="navbar bg-base-100">
-            <div
-              className="dropdown"
-              onMouseOver={handleMouseOver}
-              onMouseOut={handleMouseOut}
-            >
-              <button className="dropdown-btn">
-                <MdHome />
-                Home
-              </button>
-              {showDropdown && (
-                <ul
-                  className="menu menu-sm dropdown-content mt-3 z-[2] p-2 shadow bg-base-100 rounded-box w-52"
-                  id="dropdownMenu"
-                >
-                  <li>
-                    <Link>
-                      <MdHome />
-                      Home 1
-                    </Link>
-                  </li>
-                  <li>
-                    <a className="mr-4 uppercase mt-4">
-                      <MdHome />
-                      Home
-                    </a>
-                    <ul className="p-2">
-                      <li>
-                        <Link>Home 1</Link>
-                      </li>
-                      <li>
-                        <Link>Home 2</Link>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              )}
-            </div>
-          </div>
-
           {/* Space */}
 
           <li>
@@ -152,79 +88,94 @@ const Header = () => {
           <li>
             <Link to="product" className="mr-4 uppercase mt-1">
               <FaProductHunt />
-              Product
+              All Products
             </Link>
           </li>
-          <li>
-            <Link to="productCategory" className="mr-4 uppercase mt-1">
-              <MdCategory />
-              Product Category
-            </Link>
-          </li>
+
+          {/* dropdown button */}
+          <div className="navbar mr-4 uppercase mx-auto ">
+            <div
+              className="dropdown "
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
+              <button className=" mr-4 uppercase  ">
+                <div className="flex ">
+                  <div className="pl-2">
+                    <GiClothes />
+                  </div>
+
+                  <div className="pl-3">Clothing</div>
+                </div>
+              </button>
+              {showDropdown && (
+                <ul
+                  className="menu menu-sm dropdown-content  z-[2] shadow bg-yellow-100  rounded-box w-52"
+                  id="dropdownMenu"
+                >
+                  <li>
+                    <Link to="product" className="mr-4 uppercase mt-1">
+                      <FaHatCowboy />
+                      Men's Clothing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="productCategory" className="mr-4 uppercase mt-1">
+                      <MdGirl />
+                      Women Cloth
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/" className="mr-4 uppercase mt-4">
+                      <FaBaby />
+                      Kids Clothing
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </div>
+          </div>
           <li>
             <Link to="/" className="mr-4 uppercase mt-4">
-              <MdHome />
-              Home
+              <MdOutlineElectricalServices />
+              Electronics
             </Link>
           </li>
           <li>
             <Link to="product" className="mr-4 uppercase mt-1">
-              <FaProductHunt />
-              Product
+              <MdSmartphone />
+              Smartphones
             </Link>
           </li>
           <li>
             <Link to="productCategory" className="mr-4 uppercase mt-1">
-              <MdCategory />
-              Product Category
+              <MdLaptopChromebook />
+              Laptops / Tab
             </Link>
           </li>
           <li>
             <Link to="/" className="mr-4 uppercase mt-4">
-              <MdHome />
-              Home
+              <MdImportantDevices />
+              Accessories
             </Link>
           </li>
+
           <li>
             <Link to="product" className="mr-4 uppercase mt-1">
-              <FaProductHunt />
-              Product
+              <MdContactPhone />
+              Contact
             </Link>
           </li>
           <li>
             <Link to="productCategory" className="mr-4 uppercase mt-1">
-              <MdCategory />
-              Product Category
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className="mr-4 uppercase mt-4">
-              <MdHome />
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="product" className="mr-4 uppercase mt-1">
-              <FaProductHunt />
-              Product
+              <MdChat />
+              Chat With Us
             </Link>
           </li>
           <li>
             <Link to="productCategory" className="mr-4 uppercase mt-1">
-              <MdCategory />
-              Product Category
-            </Link>
-          </li>
-          <li>
-            <Link to="productCategory" className="mr-4 uppercase mt-1">
-              <MdCategory />
-              Product Category
-            </Link>
-          </li>
-          <li>
-            <Link to="productCategory" className="mr-4 uppercase mt-1">
-              <MdCategory />
-              Product Category
+              <MdAppSettingsAlt />
+              Setting
             </Link>
           </li>
         </ul>
@@ -234,111 +185,3 @@ const Header = () => {
 };
 
 export default Header;
-
-{
-  /* <div className='flex bg-white-300 '>
-            <section className="row second-row">
-                <div>
-                    <div className="  ">
-                        <div class="mt-5 ml-20">
-                            <div class="items">
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Dashboard</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Dashboard</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Users</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Product&SellDetails</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Sales</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Cashback</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Sats</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Sales</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Dashboard</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Dashboard</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Users</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Product&SellDetails</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Sales</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Cashback</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Sats</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Sales</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Sales</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Cashback</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Sats</Link>
-                                </div>
-                                <div >
-                                    <Link to='login'><FontAwesomeIcon icon={faCoffee} /> Sales</Link>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
-
-
-                <div className="">
-                    <div className='mr-20 mt-4'>
-                        <Carousel>
-                            <div>
-                                <img src={img1} />
-                            </div>
-                            <div>
-                                <img src={img2} />
-                            </div>
-                            <div>
-                                <img src={img3} />
-                            </div>
-                            <div>
-                                <img src={img4} />
-                            </div>
-                            <div>
-                                <img src={img5} />
-                            </div>
-                            <div>
-                                <img src={img6} />
-                            </div>
-                        </Carousel>
-                    </div>
-
-                </div>
-            </section>
-
-
-
-
-
-        </div> */
-}

@@ -9,13 +9,12 @@ import {
   MdSettings,
 } from "react-icons/md";
 import useCab from "../pages/User/hook/useCab";
-//import useAdmin from "../pages/User/hook/useAdmin";
 
 const Dashboard = () => {
   const [cab] = useCab();
 
   const isAdmin = true;
-  //const [isAdmin] = useAdmin();
+  /* const [isAdmin] = useAdmin(); */
 
   return (
     <div className=" ml-20 pl-20 drawer  lg:drawer-open bg-white">
@@ -44,6 +43,9 @@ const Dashboard = () => {
           {isAdmin ? (
             <>
               {/* Admin Part */}
+              {/* <div>
+                <img src={admin} alt="" className="w-12 rounded-full" />
+              </div> */}
               <div className="divider bg-white ">Admin Pannel</div>
               <li>
                 <NavLink

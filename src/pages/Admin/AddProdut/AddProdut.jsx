@@ -1,14 +1,17 @@
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
+import useAxiosSecure from "../../User/hook/useAxiosSecure";
 
 const img_hosting = import.meta.env.VITE_Image_Upload;
 
 const AddProduct = () => {
+  const axiosSecure = useAxiosSecure();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting}`;
 
   const onSubmit = (data) => {
@@ -24,14 +27,22 @@ const AddProduct = () => {
         if (imgResponse.success) {
           const imgURL = imgResponse.data.display_url; // Fixed the typo here
           const { name, price, category, description } = data; // Changed `item` to `category`
-          const newItem = { name, price, category, description, image: imgURL };
+          const newItem = {
+            name,
+            price: parseFloat(price),
+            category,
+            description,
+            image: imgURL,
+          };
           console.log(newItem);
+
+          // add product for auxiousSecure
+          axiosSecure.post("/product", newItem).then((data) => {
+            console.log("after posting new pproduct", data.data);
+          });
         }
       });
   };
-
-  console.log(errors);
-  console.log(img_hosting);
 
   return (
     <div className="w-full px-20 pl-20">
@@ -69,6 +80,7 @@ const AddProduct = () => {
               <option value="Blazer">Blazer</option>
               <option value="Child-Frog">Child Frog</option>
               <option value="Sari">Sari</option>
+              <option value="Sari">pizza</option>
             </select>
           </div>
 

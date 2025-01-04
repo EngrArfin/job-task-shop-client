@@ -16,7 +16,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
         <div className=" max-w-8xl max-auto ">
-          {" "}
           {/* max-w-8xl mx-auto */}
           <RouterProvider router={router} />
         </div>

@@ -24,101 +24,119 @@ const NavBar = () => {
 
   return (
     <section>
-      <div className="flex space-between m-2 uppercase bg-white">
-        <p>Welcome to SA Shop </p>
-        <div className="navbar-end lg:flex pl-4 mx-auto mr-4">
-          <div className="mr-4 flex">
-            <MdOutlineWifiCalling3 />
-            <p>+880 1952-487468</p>
-          </div>
-          <Link className="mr-4 flex items-center justify-center">
-            {" "}
-            <MdLocationOn /> Shop Location{" "}
+      {/* Top Bar */}
+      <div className="flex justify-between items-center px-4 py-2 bg-white border-b border-gray-200">
+        <p className="uppercase">Welcome to SAR Shop</p>
+        <div className="flex space-x-4 items-center">
+          <Link
+            to="https://whatsapp.com/dl/"
+            className="flex items-center text-gray-600 hover:text-black"
+          >
+            <MdOutlineWifiCalling3 className="mr-1" />
+            <span>+880 1952-487468</span>
           </Link>
-          <Link className="mr-4 flex items-center justify-center">
-            {" "}
-            <FcAbout /> About{" "}
+          <Link
+            to="https://maps.app.goo.gl/NGUUB1qKBiXLgVYg7"
+            className="flex items-center text-gray-600 hover:text-black"
+          >
+            <MdLocationOn className="mr-1" />
+            Shop Location
           </Link>
-          <Link className="mr-4 flex items-center justify-center">
-            {" "}
-            <MdOutlineContactPhone /> Contract{" "}
+          <Link
+            to="https://web.facebook.com/engrarfin/"
+            className="flex items-center text-gray-600 hover:text-black"
+          >
+            <FcAbout className="mr-1" />
+            About
+          </Link>
+          <Link
+            to="https://web.facebook.com/engrarfin/"
+            className="flex items-center text-gray-600 hover:text-black"
+          >
+            <MdOutlineContactPhone className="mr-1" />
+            Contact
           </Link>
         </div>
       </div>
-      <div className="space-around navbar  max-w-8xl max-auto z-10 text-black bg-white">
-        <div className="navbar-start">
-          <div className="flex mr-20">
-            <div to="/">
-              <img src={photo1} alt="" className="w-12 rounded-full" />
-            </div>
 
-            <div className="ml-5">
-              <label className="input input-bordered flex items-center gap-2">
-                <input type="text" className="grow" placeholder="Search" />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  className="w-4 h-4 opacity-70"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </label>
-            </div>
+      {/* Main Navigation */}
+      <div className="flex justify-between items-center px-4 py-4 bg-white shadow-md">
+        {/* Logo and Search */}
+        <div className="flex items-center">
+          <img
+            src={photo1}
+            alt="Logo"
+            className="w-12 h-12 rounded-full mr-4"
+          />
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search"
+              className="input input-bordered w-64 pr-10"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="absolute top-2 right-2 w-6 h-6 text-gray-500"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                clipRule="evenodd"
+              />
+            </svg>
           </div>
         </div>
-        <div className="navbar-end pl-4 mx-auto">
-          <div className="navbar-center hidden lg:flex ">
-            <ul className="menu menu-horizontal px-1 p-4">
-              <Link to="signup" className="mr-4 uppercase">
-                Sign Up
-              </Link>
-              <Link className=" mr-4 uppercase"> |</Link>
 
-              {user ? (
-                <>
-                  <button onClick={handleLogOut} className="mr-4 uppercase">
-                    LogOut
-                  </button>
-                </>
-              ) : (
-                <>
-                  <Link to="/login" className="mr-4 uppercase">
-                    Login
-                  </Link>
-                </>
-              )}
-            </ul>
-          </div>
-          <Link
-            to="dashboard/mycab"
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle"
-          >
-            <div className="indicator ">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 "
-                fill="none"
-                viewBox="0 0 22 22"
-                stroke="currentColor"
+        {/* Menu Items */}
+        <div className="flex items-center space-x-6">
+          <ul className="flex space-x-4 items-center">
+            <Link
+              to="/signup"
+              className="uppercase text-gray-600 hover:text-black"
+            >
+              Sign Up
+            </Link>
+            <span className="text-gray-400">|</span>
+            {user ? (
+              <button
+                onClick={handleLogOut}
+                className="uppercase text-gray-600 hover:text-black"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              <span className="badge  badge-primary indicator-item">
-                {cab?.length || 0}
-              </span>
-            </div>
+                Logout
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="uppercase text-gray-600 hover:text-black"
+              >
+                Login
+              </Link>
+            )}
+          </ul>
+          {/* Cart Icon */}
+          <Link
+            to="/dashboard/mycab"
+            className="btn btn-ghost btn-circle relative"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6"
+              fill="none"
+              viewBox="0 0 22 22"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            <span className="badge badge-primary absolute top-0 right-0">
+              {cab?.length || 0}
+            </span>
           </Link>
         </div>
       </div>

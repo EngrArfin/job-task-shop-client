@@ -24,7 +24,7 @@ const CategoryProductItem = ({ item }) => {
         price,
         email: user.email,
       };
-      fetch("http://localhost:5000/cabs", {
+      fetch("https://sar-shop-server.vercel.app/cabs", {
         method: "POST",
         headers: {
           "content-type": "application/json",

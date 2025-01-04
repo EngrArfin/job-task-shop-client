@@ -7,7 +7,7 @@ const adminProduct = () => {
   const { refetch, data: allproducts = [] } = useQuery({
     queryKey: ["allProduct", product],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/product");
+      const res = await fetch("https://sar-shop-server.vercel.app/product");
       return res.json();
     },
   });

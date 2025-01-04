@@ -25,7 +25,7 @@ const OrderFinal = ({ item }) => {
         price,
         email: user.email,
       };
-      fetch("http://localhost:5000/cabs", {
+      fetch("https://sar-shop-server.vercel.app/cabs", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -35,7 +35,7 @@ const OrderFinal = ({ item }) => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            refetch(); /* refetch to the cab */
+            refetch();
             Swal.fire({
               position: "top-end",
               icon: "success",

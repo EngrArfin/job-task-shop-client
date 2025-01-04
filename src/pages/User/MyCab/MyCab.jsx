@@ -6,9 +6,13 @@ import useCab from "../hook/useCab";
 
 const MyCab = () => {
   const [cab, refetch] = useCab();
+  console.log(cab);
 
   // Ensure cab is an array before using reduce
-  const total = cab.reduce((sum, item) => item.price + sum, 0);
+  /* const total = cab.reduce((sum, item) => item.price + sum, 0); */
+  const total = Array.isArray(cab)
+    ? cab.reduce((sum, item) => sum + (Number(item.price) || 0), 0)
+    : 0;
 
   const handleDelete = (item) => {
     Swal.fire({
@@ -21,7 +25,7 @@ const MyCab = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cabs/${item._id}`, {
+        fetch(`https://sar-shop-server.vercel.app/cabs/${item._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -45,7 +49,7 @@ const MyCab = () => {
           {" "}
           Total Item: {Array.isArray(cab) ? cab.length : 0}{" "}
         </h2>
-        <h2 className="text-2xl ml-5"> Total Price: TK {total}</h2>
+        <h2 className="text-2xl ml-5"> Total Price: {total} TK </h2>
         <button className="btn btn-warning btn-xs ml-5">Pay</button>
       </div>
 
