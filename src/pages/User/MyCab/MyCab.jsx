@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 import { FaTrashAlt } from "react-icons/fa";
 import useCab from "../hook/useCab";
+import { Link } from "react-router-dom";
 
 const MyCab = () => {
   const [cab, refetch] = useCab();
@@ -40,17 +41,30 @@ const MyCab = () => {
   };
 
   return (
-    <div className="w-full mt-10 w-full px-20 pl-20">
+    <div className="min-h-screen w-full mt-10  px-20 pl-20">
       <Helmet>
         <title>SA Shop | Dashboard</title>
       </Helmet>
       <div className="uppercase flex h-9 font-semibold justify-evenly">
         <h2 className="text-2xl ">
-          {" "}
           Total Item: {Array.isArray(cab) ? cab.length : 0}{" "}
         </h2>
         <h2 className="text-2xl ml-5"> Total Price: {total} TK </h2>
-        <button className="btn btn-warning btn-xs ml-5">Pay</button>
+
+        {cab.length ? (
+          <Link to="/dashboard/payment">
+            <button
+              /*  disabled={!cab.length} */
+              className="btn btn-warning btn-xs ml-5"
+            >
+              Payment
+            </button>
+          </Link>
+        ) : (
+          <button disabled className="btn btn-warning btn-xs ml-5">
+            Payment
+          </button>
+        )}
       </div>
 
       <div className="overflow-x-auto mt-10">

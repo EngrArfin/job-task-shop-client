@@ -13,6 +13,7 @@ import MyCab from "../pages/User/MyCab/MyCab";
 import AllUsers from "../pages/User/AllUsers/AllUsers";
 import OrderFinal from "../pages/Home/Share/SubShare/OrderFinal/OrderFinal";
 import AddProdut from "../pages/Admin/AddProdut/AddProdut";
+import Payment from "../pages/User/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +75,10 @@ export const router = createBrowserRouter([
       {
         path: "mycab",
         element: <MyCab></MyCab>,
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
       },
 
       /* admin root */
