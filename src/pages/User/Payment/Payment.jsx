@@ -9,10 +9,10 @@ const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_Pk);
 const Payment = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center ">
-      <div className=" w-full max-w-5xl mx-auto p-6 bg-white rounded-2xl shadow-lg">
+      <div className=" w-full max-w-5xl mx-auto p-6 bg-sky-400 rounded-2xl shadow-lg">
         <SectionTitle
-          heading="Payment"
-          subHeading="Please complete your payment"
+          heading="Card Payment"
+          subHeading="Please Confirm payment"
         />
         <div className="mt-6">
           <Elements stripe={stripePromise}>
