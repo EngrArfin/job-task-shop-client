@@ -5,8 +5,9 @@ import useCab from "../hook/useCab";
 
 const CheckoutForm = () => {
   const [error, setError] = useState("");
+  const [clientSecret, setClientSecret] = useState("");
+  const [transcriptionId, setTransactionId] = useState("");
   const stripe = useStripe();
-  const [clientSecret, setClientSecret] = useState();
   const element = useElements();
 
   const axiosSecure = useAxiosSecure();
@@ -43,6 +44,26 @@ const CheckoutForm = () => {
       console.log("payment method", paymentMethod);
       setError("");
     }
+    //confirm payment
+    const { paymentIntent, error: confirmError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            email: user?.email || "anonymous",
+            name: user?.displayName || "anonymous",
+          },
+        },
+      });
+    if (confirmError) {
+      console.log("confirm error");
+    } else {
+      console.log("payment intent", paymentIntent);
+      if (paymentIntent.status === "succeeded") {
+        console.log(" transaction id ", paymentIntent);
+        setTransactionId(paymentIntent.id);
+      }
+    }
   };
   return (
     <div>
@@ -71,6 +92,11 @@ const CheckoutForm = () => {
           Pay Confirm
         </button>
         <p className="text-red-500"> {error} </p>
+        {transcriptionId && (
+          <p className="text-green-500">
+            Your Transtaction id: {transcriptionId}
+          </p>
+        )}
       </form>
     </div>
   );
