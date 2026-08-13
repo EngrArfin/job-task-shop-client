@@ -3,11 +3,12 @@ import { AuthContext } from "../../../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useCab from "../../../User/hook/useCab";
-import Category from "../Category/Category";
 import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+import { FaShoppingCart } from "react-icons/fa";
 
 const CategoryProductItem = ({ item }) => {
-  const { name, image, price, description, _id } = item || {};
+  const { name, image, price, description, _id, rating } = item || {};
 
   const { user } = useContext(AuthContext);
   const [, refetch] = useCab();
@@ -38,7 +39,7 @@ const CategoryProductItem = ({ item }) => {
             Swal.fire({
               position: "top-end",
               icon: "success",
-              title: "Product add on cab",
+              title: "Product added to cart",
               showConfirmButton: false,
               timer: 1500,
             });
@@ -61,62 +62,69 @@ const CategoryProductItem = ({ item }) => {
   };
 
   return (
-    <div className="mt-10 card w-96 bg-white shadow-xl">
-      <figure>
-        <img src={image} alt="Shoes" />
-      </figure>
-      <div>
-        <p className="  bg-green-900 text-white">
-          20% off / <sup className="bg-red-900 ">Limioted Time deal</sup>
-        </p>
-      </div>
-      <div className=" absolute right-0  mr-4 mt-4">
-        <div>
-          {
-            <p className="absolute right-0  mr-4 mt-4 bg-green-900 text-white">
-              ${price}
-            </p>
-          }
-        </div>
-        <br />
-        <br />
-        <div>
-          <p className="absolute right-0  mr-4 mb-10 bg-red-700 text-white">
-            <del>1600</del>
-          </p>
+    <div className="w-full bg-white rounded-2xl shadow-sm border border-slate-155 hover:border-emerald-200 hover:shadow-md transition-all duration-300 flex flex-col h-full group relative overflow-hidden mt-6">
+      
+      {/* Product Image & Price Overlay */}
+      <div className="aspect-[4/3] bg-slate-50 flex items-center justify-center p-4 overflow-hidden relative">
+        <img 
+          src={image} 
+          alt={name} 
+          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+        />
+        
+        {/* Floating Price Badge */}
+        <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5 z-10">
+          <span className="bg-emerald-600 text-white font-bold text-xs px-2.5 py-1 rounded-lg shadow-sm">
+            ${price}
+          </span>
+          <span className="bg-rose-500 text-white text-[10px] font-semibold px-2 py-0.5 rounded-lg line-through shadow-sm">
+            $1600
+          </span>
         </div>
       </div>
 
-      <div className="card-body">
-        <h2 className="card-title">
+      {/* Limited Time Deal Banner */}
+      <div className="bg-emerald-900 text-emerald-100 py-1.5 px-4 text-xs font-semibold flex items-center justify-between gap-2 border-y border-emerald-800">
+        <span>20% OFF</span>
+        <span className="bg-rose-600 text-white text-[9px] uppercase px-1.5 py-0.5 rounded font-bold tracking-wider">
+          Limited Time Deal
+        </span>
+      </div>
+
+      {/* Card Info */}
+      <div className="p-5 flex flex-col flex-grow">
+        <h3 className="font-bold text-slate-800 text-base mb-1.5 group-hover:text-emerald-600 transition-colors line-clamp-1">
           {name}
-          <div></div>
+        </h3>
+        
+        {/* Rating Row */}
+        <div className="flex items-center gap-1.5 mb-3">
           <Rating
-            className="badge bg-green-900 w-5 "
-            style={{ maxWidth: 180 }}
-            value={Category.rating}
+            style={{ maxWidth: 85 }}
+            value={rating || 5}
             readOnly
           />
-        </h2>
-        <p>{description}</p>
+          <span className="text-[10px] text-slate-400 font-semibold mt-0.5">
+            ({rating || 5}.0)
+          </span>
+        </div>
 
-        <div>
-          <div className="card-actions justify-start">
-            <div className="badge badge-outline">{price}</div>
-            <div className="badge badge-outline">{price}</div>
-          </div>
-          <div className="flex justify-center  ">
-            <div className="card-actions ml-5 text-white">
-              <button
-                onClick={() => handleAddToCab(item)}
-                className="bg-green-900  border-3 border-b-4 mt-4"
-              >
-                Add To Cart
-              </button>
-            </div>
-          </div>
+        <p className="text-slate-500 text-xs leading-relaxed mb-4 flex-grow line-clamp-2">
+          {description}
+        </p>
+
+        {/* Action Button */}
+        <div className="mt-auto pt-3 border-t border-slate-100">
+          <button
+            onClick={() => handleAddToCab(item)}
+            className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.98] text-sm"
+          >
+            <FaShoppingCart className="text-sm" />
+            <span>Add to Cart</span>
+          </button>
         </div>
       </div>
+
     </div>
   );
 };
