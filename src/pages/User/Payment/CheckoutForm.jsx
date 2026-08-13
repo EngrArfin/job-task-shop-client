@@ -86,11 +86,11 @@ const CheckoutForm = () => {
           }}
         />
         <button
-          className="btn btn-sm mt-4 bg-red-500 text-green-500"
+          className="w-full mt-6 py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-md shadow-indigo-600/10 hover:shadow-indigo-600/20 active:scale-[0.99] transition-all duration-150 text-sm disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none"
           type="submit"
           disabled={!stripe || !clientSecret}
         >
-          Pay Confirm
+          Confirm Payment
         </button>
         <p className="text-red-500"> {error} </p>
         {transcriptionId && (

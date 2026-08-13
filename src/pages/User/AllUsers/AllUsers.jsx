@@ -59,55 +59,67 @@ const AllUsers = () => {
   };
 
   return (
-    <div>
+    <div className="w-full py-8 px-4 sm:px-6 lg:px-8 bg-slate-50/50 min-h-screen">
       <Helmet>
         <title>SA Shop | All Users</title>
       </Helmet>
-      <h2 className="text-3xl front-semibold">
-        Welcome to All Users: {users.length}{" "}
-      </h2>
-      <div className="overflow-x-auto">
-        <table className="table table-zebra">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user, index) => (
-              <tr key={user._id}>
-                <th>{index + 1}</th>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>
-                  {user.role === "admin" ? (
-                    "admin"
-                  ) : (
-                    <button
-                      onClick={() => handleMakeAdmin(user)}
-                      className="btn btn-ghost bg-red-500 text-white"
-                    >
-                      <FaUserShield></FaUserShield>
-                    </button>
-                  )}
-                </td>
-                <td>
-                  <button
-                    onClick={() => handleDelete(user)}
-                    className="btn btn-ghost bg-red-700 text-white"
-                  >
-                    <FaTrashAlt></FaTrashAlt>
-                  </button>
-                </td>
+      
+      {/* Title Box */}
+      <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm mb-8">
+        <h2 className="text-xl font-bold text-slate-800 uppercase tracking-wide">
+          All Registered Users: <span className="text-indigo-600">{users.length}</span>
+        </h2>
+      </div>
+
+      {/* Users Table */}
+      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="table w-full">
+            {/* head */}
+            <thead className="bg-slate-50 text-slate-500 uppercase text-xs tracking-wider">
+              <tr>
+                <th className="py-4 px-6 text-left">No</th>
+                <th className="py-4 px-6 text-left">Name</th>
+                <th className="py-4 px-6 text-left">Email</th>
+                <th className="py-4 px-6 text-center">Role</th>
+                <th className="py-4 px-6 text-center">Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {users.map((user, index) => (
+                <tr key={user._id} className="hover:bg-slate-50/50 transition-colors">
+                  <td className="py-4 px-6 font-medium text-slate-600">{index + 1}</td>
+                  <td className="py-4 px-6 font-semibold text-slate-800">{user.name}</td>
+                  <td className="py-4 px-6 text-slate-600">{user.email}</td>
+                  <td className="py-4 px-6 text-center">
+                    {user.role === "admin" ? (
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                        Admin
+                      </span>
+                    ) : (
+                      <button
+                        onClick={() => handleMakeAdmin(user)}
+                        className="inline-flex items-center justify-center p-2.5 bg-indigo-50 text-indigo-600 hover:bg-indigo-600 hover:text-white rounded-xl transition-all duration-200"
+                        title="Make Admin"
+                      >
+                        <FaUserShield className="text-sm" />
+                      </button>
+                    )}
+                  </td>
+                  <td className="py-4 px-6 text-center">
+                    <button
+                      onClick={() => handleDelete(user)}
+                      className="inline-flex items-center justify-center p-2.5 bg-rose-50 text-rose-600 hover:bg-rose-600 hover:text-white rounded-xl transition-all duration-200"
+                      title="Delete User"
+                    >
+                      <FaTrashAlt className="text-sm" />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

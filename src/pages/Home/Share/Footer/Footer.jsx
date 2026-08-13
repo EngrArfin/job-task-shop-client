@@ -2,91 +2,105 @@ import photo1 from "../../../../assets/photo1.jpg";
 
 const Footer = () => {
   return (
-    <div className="bg-white">
-      <hr />
-      <footer className="footer max-w-8xl p-10 bg-white-100 text-base-content">
-        <aside>
-          <img
-            src={photo1}
-            alt="SAR Shop Logo"
-            className="h-16 w-16 object-contain"
-          />
-          <p>
-            SAR Shop
-            <br /> Providing reliable tech since 2023
+    <div className="bg-slate-950 text-slate-300 border-t border-slate-900">
+      <footer className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+        
+        {/* Brand Information */}
+        <aside className="flex flex-col gap-4">
+          <div className="flex items-center gap-3">
+            <img
+              src={photo1}
+              alt="SAR Shop Logo"
+              className="h-12 w-12 rounded-full object-cover border border-slate-800"
+            />
+            <span className="font-bold text-lg text-white tracking-wider">
+              SAR Shop
+            </span>
+          </div>
+          <p className="text-sm text-slate-400 leading-relaxed">
+            Providing premium quality apparel and reliable customer service since 2023. Your satisfaction is our priority.
           </p>
         </aside>
-        <nav>
-          <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+
+        {/* Services Links */}
+        <nav className="flex flex-col gap-3">
+          <h6 className="text-white font-bold text-sm uppercase tracking-wider mb-1">Services</h6>
+          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Branding</a>
+          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Design</a>
+          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Marketing</a>
+          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Advertisement</a>
         </nav>
-        <nav>
-          <h6 className="footer-title">Company</h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+
+        {/* Company Links */}
+        <nav className="flex flex-col gap-3">
+          <h6 className="text-white font-bold text-sm uppercase tracking-wider mb-1">Company</h6>
+          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">About us</a>
+          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Contact</a>
+          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Jobs</a>
+          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Press kit</a>
         </nav>
-        <div className="grid grid-flow-col gap-4">
-          <form>
-            <h6 className="footer-title">Social</h6>
-            <fieldset className="form-control w-80">
-              <label className="label">
-                <span className="label-text">Enter your email address</span>
-              </label>
-              <div className="join">
-                <input
-                  type="text"
-                  placeholder="username@site.com"
-                  className="input input-bordered join-item"
-                />
-                <button className="btn btn-primary join-item">Subscribe</button>
-              </div>
-              <div className="grid grid-flow-col gap-4 p-4">
-                <a>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    className="fill-current"
-                  >
-                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                  </svg>
-                </a>
-                <a>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    className="fill-current"
-                  >
-                    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-                  </svg>
-                </a>
-                <a>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    className="fill-current"
-                  >
-                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-                  </svg>
-                </a>
-              </div>{" "}
-            </fieldset>
+
+        {/* Social / Newsletter */}
+        <div className="flex flex-col gap-4">
+          <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-3">
+            <h6 className="text-white font-bold text-sm uppercase tracking-wider mb-1">Newsletter</h6>
+            <span className="text-xs text-slate-400">Enter your email address to stay updated</span>
+            <div className="flex mt-1">
+              <input
+                type="email"
+                placeholder="username@site.com"
+                className="w-full bg-slate-900 border border-slate-800 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500 rounded-l-xl px-4 py-2 text-sm focus:ring-1 focus:ring-indigo-500"
+              />
+              <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm px-4 py-2 rounded-r-xl transition-colors">
+                Subscribe
+              </button>
+            </div>
           </form>
+
+          {/* Social Icons */}
+          <div className="flex gap-4 mt-2">
+            <a className="text-slate-400 hover:text-indigo-400 transition-colors" aria-label="Twitter">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                className="fill-current"
+              >
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+              </svg>
+            </a>
+            <a className="text-slate-400 hover:text-indigo-400 transition-colors" aria-label="YouTube">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                className="fill-current"
+              >
+                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+              </svg>
+            </a>
+            <a className="text-slate-400 hover:text-indigo-400 transition-colors" aria-label="Facebook">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                className="fill-current"
+              >
+                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+              </svg>
+            </a>
+          </div>
         </div>
+
       </footer>
-      <footer className="footer footer-center p-4 bg-white-100 text-base-content">
+      
+      {/* Bottom copyright footer */}
+      <footer className="footer footer-center py-6 border-t border-slate-900/60 bg-slate-950 text-slate-500 text-sm">
         <aside>
-          <p>Copyright © 2024 - All right reserved by SAR Shop </p>
+          <p>Copyright © 2026 - All rights reserved by SAR Shop</p>
         </aside>
       </footer>
     </div>

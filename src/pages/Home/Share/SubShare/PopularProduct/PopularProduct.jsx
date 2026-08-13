@@ -15,9 +15,8 @@ const PopularProduct = () => {
   return (
     <div className="mt-12 mb-16 text-slate-800">
       <SectionTitle
-        className="mb-8"
-        heading="Shop Popular Product"
-        subHeading="Click here for different category products"
+        heading="Popular Products"
+        subHeading="Explore our most-loved and top-rated styles, handpicked for you"
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-4">
         {categorys.map((category) => (

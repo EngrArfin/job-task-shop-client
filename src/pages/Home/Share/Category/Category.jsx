@@ -14,8 +14,8 @@ const Category = () => {
   return (
     <div className="mt-8 mb-12 text-slate-800">
       <SectionTitle
-        className="mb-8"
-        heading="Shop Product Category"
+        heading="Shop by Category"
+        subHeading="Browse our collection by apparel type to find exactly what you need"
       />
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 px-4">
         {categorys.map((category) => (

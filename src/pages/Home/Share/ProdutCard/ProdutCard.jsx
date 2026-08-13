@@ -16,8 +16,8 @@ const ProdutCard = () => {
   return (
     <div className="">
       <SectionTitle
-        heading="Product"
-        subHeading="open fooer here"
+        heading="Our Collections"
+        subHeading="Discover the latest additions to our premium apparel catalog"
       ></SectionTitle>
       <div className="grid md:grid-cols-4 gap-5">
         {menu.map((item) => (

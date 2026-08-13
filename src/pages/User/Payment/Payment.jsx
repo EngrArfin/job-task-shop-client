@@ -8,13 +8,13 @@ const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_Pk);
 
 const Payment = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center ">
-      <div className=" w-full max-w-5xl mx-auto p-6 bg-sky-400 rounded-2xl shadow-lg">
+    <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-md p-8 bg-white border border-slate-100 rounded-3xl shadow-xl">
         <SectionTitle
           heading="Card Payment"
-          subHeading="Please Confirm payment"
+          subHeading="Please confirm payment details below"
         />
-        <div className="mt-6">
+        <div className="mt-8">
           <Elements stripe={stripePromise}>
             <CheckoutForm />
           </Elements>

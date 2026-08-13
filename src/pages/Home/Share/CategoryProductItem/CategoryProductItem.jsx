@@ -62,7 +62,7 @@ const CategoryProductItem = ({ item }) => {
   };
 
   return (
-    <div className="w-full bg-white rounded-2xl shadow-sm border border-slate-155 hover:border-emerald-200 hover:shadow-md transition-all duration-300 flex flex-col h-full group relative overflow-hidden mt-6">
+    <div className="w-full bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all duration-300 flex flex-col h-full group relative overflow-hidden mt-6">
       
       {/* Product Image & Price Overlay */}
       <div className="aspect-[4/3] bg-slate-50 flex items-center justify-center p-4 overflow-hidden relative">
@@ -74,7 +74,7 @@ const CategoryProductItem = ({ item }) => {
         
         {/* Floating Price Badge */}
         <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5 z-10">
-          <span className="bg-emerald-600 text-white font-bold text-xs px-2.5 py-1 rounded-lg shadow-sm">
+          <span className="bg-indigo-600 text-white font-bold text-xs px-2.5 py-1 rounded-lg shadow-sm">
             ${price}
           </span>
           <span className="bg-rose-500 text-white text-[10px] font-semibold px-2 py-0.5 rounded-lg line-through shadow-sm">
@@ -84,7 +84,7 @@ const CategoryProductItem = ({ item }) => {
       </div>
 
       {/* Limited Time Deal Banner */}
-      <div className="bg-emerald-900 text-emerald-100 py-1.5 px-4 text-xs font-semibold flex items-center justify-between gap-2 border-y border-emerald-800">
+      <div className="bg-indigo-950 text-indigo-100 py-1.5 px-4 text-xs font-semibold flex items-center justify-between gap-2 border-y border-indigo-900/50">
         <span>20% OFF</span>
         <span className="bg-rose-600 text-white text-[9px] uppercase px-1.5 py-0.5 rounded font-bold tracking-wider">
           Limited Time Deal
@@ -93,7 +93,7 @@ const CategoryProductItem = ({ item }) => {
 
       {/* Card Info */}
       <div className="p-5 flex flex-col flex-grow">
-        <h3 className="font-bold text-slate-800 text-base mb-1.5 group-hover:text-emerald-600 transition-colors line-clamp-1">
+        <h3 className="font-bold text-slate-800 text-base mb-1.5 group-hover:text-indigo-600 transition-colors line-clamp-1">
           {name}
         </h3>
         
@@ -117,7 +117,7 @@ const CategoryProductItem = ({ item }) => {
         <div className="mt-auto pt-3 border-t border-slate-100">
           <button
             onClick={() => handleAddToCab(item)}
-            className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.98] text-sm"
+            className="w-full flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.98] text-sm"
           >
             <FaShoppingCart className="text-sm" />
             <span>Add to Cart</span>

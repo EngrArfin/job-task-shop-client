@@ -60,21 +60,21 @@ const CategoryProduct = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Tabs selectedIndex={tabMenu} onSelect={handleTabSelect}>
           {/* Tab Navigation Bar */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 bg-gradient-to-r from-emerald-950 to-teal-900 border border-emerald-900/40 rounded-2xl shadow-xl mb-10">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 bg-gradient-to-r from-slate-900 to-indigo-950 border border-indigo-900/20 rounded-2xl shadow-xl mb-10">
             <div className="flex items-center justify-between gap-3">
               <button
                 onClick={handlePrev}
-                className="flex items-center justify-center w-10 h-10 bg-emerald-900/60 hover:bg-emerald-800 text-emerald-100 border border-emerald-800/50 rounded-xl transition-all duration-300 shadow-inner active:scale-95"
+                className="flex items-center justify-center w-10 h-10 bg-indigo-900/40 hover:bg-indigo-800/60 text-indigo-100 border border-indigo-800/30 rounded-xl transition-all duration-300 shadow-inner active:scale-95"
                 aria-label="Previous category"
               >
                 <FaChevronLeft className="text-sm" />
               </button>
-              <h3 className="sm:hidden font-bold text-emerald-100 text-sm tracking-wide uppercase">
+              <h3 className="sm:hidden font-bold text-indigo-100 text-sm tracking-wide uppercase">
                 Categories
               </h3>
               <button
                 onClick={handleNext}
-                className="flex items-center justify-center w-10 h-10 bg-emerald-900/60 hover:bg-emerald-800 text-emerald-100 border border-emerald-800/50 rounded-xl transition-all duration-300 shadow-inner active:scale-95 sm:order-last"
+                className="flex items-center justify-center w-10 h-10 bg-indigo-900/40 hover:bg-indigo-800/60 text-indigo-100 border border-indigo-800/30 rounded-xl transition-all duration-300 shadow-inner active:scale-95 sm:order-last"
                 aria-label="Next category"
               >
                 <FaChevronRight className="text-sm" />
@@ -87,8 +87,8 @@ const CategoryProduct = () => {
                   key={index}
                   className={`px-5 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap cursor-pointer transition-all duration-300 outline-none select-none ${
                     tabMenu === index
-                      ? "bg-white text-emerald-950 shadow-md shadow-emerald-950/20 scale-105 border border-white"
-                      : "bg-emerald-900/40 text-emerald-200/80 hover:bg-emerald-800/60 hover:text-white border border-emerald-800/30 hover:border-emerald-700/50"
+                      ? "bg-white text-indigo-950 shadow-md shadow-indigo-950/20 scale-105 border border-white"
+                      : "bg-indigo-900/30 text-indigo-200/80 hover:bg-indigo-850 hover:text-white border border-indigo-800/20 hover:border-indigo-700/30"
                   }`}
                 >
                   {title}
