@@ -2,15 +2,16 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../hook/useAxiosSecure";
 import useCab from "../hook/useCab";
+import useAuth from "../hook/useAuth";
 
 const CheckoutForm = () => {
   const [error, setError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
   const [transcriptionId, setTransactionId] = useState("");
   const stripe = useStripe();
-  const element = useElements();
-
+  const elements = useElements();
   const axiosSecure = useAxiosSecure();
+  const { user } = useAuth();
   const [cart] = useCab();
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
@@ -25,10 +26,10 @@ const CheckoutForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!stripe || !element) {
+    if (!stripe || !elements) {
       return;
     }
-    const card = element.getElement(CardElement);
+    const card = elements.getElement(CardElement);
 
     if (card === null) {
       return;

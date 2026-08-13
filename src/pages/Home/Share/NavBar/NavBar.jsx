@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import photo1 from "../../../../assets/photo1.jpg";
 import { AuthContext } from "../../../../AuthProvider/AuthProvider";
@@ -8,6 +8,9 @@ import {
   MdLocationOn,
   MdOutlineContactPhone,
   MdOutlineWifiCalling3,
+  MdClose,
+  MdMenu,
+  MdSearch,
 } from "react-icons/md";
 import { FcAbout } from "react-icons/fc";
 
@@ -15,6 +18,7 @@ const NavBar = () => {
   const { user } = useAuth();
   const { logOut } = useContext(AuthContext);
   const [cab] = useCab();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogOut = () => {
     logOut()
@@ -23,123 +27,272 @@ const NavBar = () => {
   };
 
   return (
-    <section>
+    <section className="w-full">
       {/* Top Bar */}
-      <div className="flex justify-between items-center px-4 py-2 bg-white border-b border-gray-200">
-        <p className="uppercase">Welcome to SAR Shop</p>
-        <div className="flex space-x-4 items-center">
+      <div className="hidden md:flex justify-between items-center px-6 py-2 bg-slate-50 border-b border-slate-200/60 text-xs text-slate-600 font-medium">
+        <p className="uppercase tracking-wider font-semibold text-indigo-600">Welcome to SAR Shop</p>
+        <div className="flex space-x-6 items-center">
           <Link
             to="https://whatsapp.com/dl/"
-            className="flex items-center text-gray-600 hover:text-black"
+            className="flex items-center text-slate-500 hover:text-indigo-600 transition-colors duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <MdOutlineWifiCalling3 className="mr-1" />
+            <MdOutlineWifiCalling3 className="mr-1.5 text-base text-indigo-500" />
             <span>+880 1952-487468</span>
           </Link>
           <Link
             to="https://maps.app.goo.gl/NGUUB1qKBiXLgVYg7"
-            className="flex items-center text-gray-600 hover:text-black"
+            className="flex items-center text-slate-500 hover:text-indigo-600 transition-colors duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <MdLocationOn className="mr-1" />
-            Shop Location
+            <MdLocationOn className="mr-1.5 text-base text-indigo-500" />
+            <span>Shop Location</span>
           </Link>
           <Link
             to="https://web.facebook.com/engrarfin/"
-            className="flex items-center text-gray-600 hover:text-black"
+            className="flex items-center text-slate-500 hover:text-indigo-600 transition-colors duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <FcAbout className="mr-1" />
-            About
+            <FcAbout className="mr-1.5 text-base" />
+            <span>About</span>
           </Link>
           <Link
             to="https://web.facebook.com/engrarfin/"
-            className="flex items-center text-gray-600 hover:text-black"
+            className="flex items-center text-slate-500 hover:text-indigo-600 transition-colors duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <MdOutlineContactPhone className="mr-1" />
-            Contact
+            <MdOutlineContactPhone className="mr-1.5 text-base text-indigo-500" />
+            <span>Contact</span>
           </Link>
         </div>
       </div>
 
       {/* Main Navigation */}
-      <div className="flex justify-between items-center px-4 py-4 bg-white shadow-md">
-        {/* Logo and Search */}
-        <div className="flex items-center">
-          <img
-            src={photo1}
-            alt="Logo"
-            className="w-12 h-12 rounded-full mr-4"
-          />
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search"
-              className="input input-bordered w-64 pr-10"
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="absolute top-2 right-2 w-6 h-6 text-gray-500"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                clipRule="evenodd"
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16 md:h-20 gap-4">
+            
+            {/* Logo and Branding */}
+            <div className="flex items-center gap-3 shrink-0">
+              <Link to="/" className="flex items-center gap-2 group">
+                <img
+                  src={photo1}
+                  alt="SAR Shop Logo"
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border border-slate-200 shadow-sm transition-transform duration-300 group-hover:scale-105"
+                />
+                <span className="font-bold text-lg md:text-xl tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                  SAR Shop
+                </span>
+              </Link>
+            </div>
+
+            {/* Desktop Search Bar */}
+            <div className="hidden md:flex flex-1 max-w-md mx-4 relative">
+              <input
+                type="text"
+                placeholder="Search products..."
+                className="w-full pl-4 pr-10 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm transition-all duration-200 focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500/10"
               />
-            </svg>
+              <MdSearch className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xl pointer-events-none" />
+            </div>
+
+            {/* Desktop Action Items */}
+            <div className="hidden lg:flex items-center gap-6">
+              <div className="flex items-center gap-2">
+                {user ? (
+                  <button
+                    onClick={handleLogOut}
+                    className="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-rose-600 transition-colors duration-200"
+                  >
+                    Logout
+                  </button>
+                ) : (
+                  <>
+                    <Link
+                      to="/login"
+                      className="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-indigo-600 transition-colors duration-200"
+                    >
+                      Login
+                    </Link>
+                    <Link
+                      to="/signup"
+                      className="px-4 py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-full shadow-sm transition-all duration-200 transform hover:-translate-y-0.5"
+                    >
+                      Sign Up
+                    </Link>
+                  </>
+                )}
+              </div>
+
+              {/* Cart Icon */}
+              <Link
+                to="/dashboard/mycab"
+                className="relative p-2.5 text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded-full transition-all duration-200"
+                aria-label="View Shopping Cart"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                {cab?.length > 0 && (
+                  <span className="absolute top-0 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-rose-500 text-[10px] font-bold text-white shadow-sm border border-white animate-pulse">
+                    {cab.length}
+                  </span>
+                )}
+              </Link>
+            </div>
+
+            {/* Mobile Header Icons & Hamburger */}
+            <div className="flex lg:hidden items-center gap-2">
+              {/* Cart Icon (Visible on Mobile) */}
+              <Link
+                to="/dashboard/mycab"
+                className="relative p-2 text-slate-600 hover:text-indigo-600 rounded-full transition-all"
+                aria-label="View Shopping Cart"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                {cab?.length > 0 && (
+                  <span className="absolute top-0 right-0 flex h-4.5 w-4.5 items-center justify-center rounded-full bg-rose-500 text-[9px] font-bold text-white shadow-sm border border-white">
+                    {cab.length}
+                  </span>
+                )}
+              </Link>
+
+              {/* Hamburger Button */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2 text-slate-600 hover:text-indigo-600 rounded-full hover:bg-slate-100 focus:outline-none transition-colors duration-200"
+                aria-expanded={isMenuOpen}
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? (
+                  <MdClose className="text-2xl" />
+                ) : (
+                  <MdMenu className="text-2xl" />
+                )}
+              </button>
+            </div>
+
           </div>
         </div>
 
-        {/* Menu Items */}
-        <div className="flex items-center space-x-6">
-          <ul className="flex space-x-4 items-center">
-            <Link
-              to="/signup"
-              className="uppercase text-gray-600 hover:text-black"
-            >
-              Sign Up
-            </Link>
-            <span className="text-gray-400">|</span>
-            {user ? (
-              <button
-                onClick={handleLogOut}
-                className="uppercase text-gray-600 hover:text-black"
-              >
-                Logout
-              </button>
-            ) : (
-              <Link
-                to="/login"
-                className="uppercase text-gray-600 hover:text-black"
-              >
-                Login
-              </Link>
-            )}
-          </ul>
-          {/* Cart Icon */}
-          <Link
-            to="/dashboard/mycab"
-            className="btn btn-ghost btn-circle relative"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6"
-              fill="none"
-              viewBox="0 0 22 22"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-              />
-            </svg>
-            <span className="badge badge-primary absolute top-0 right-0">
-              {cab?.length || 0}
-            </span>
-          </Link>
-        </div>
-      </div>
+        {/* Mobile Dropdown Panel */}
+        {isMenuOpen && (
+          <div className="lg:hidden border-t border-slate-100 bg-white shadow-lg animate-[slideDown_0.2s_ease-out]">
+            <div className="px-4 py-4 space-y-4">
+              
+              {/* Search Bar on Mobile */}
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search products..."
+                  className="w-full pl-4 pr-10 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white"
+                />
+                <MdSearch className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xl pointer-events-none" />
+              </div>
+
+              {/* Navigation Links */}
+              <div className="flex flex-col gap-1">
+                <span className="px-3 py-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider">Quick Links</span>
+                <Link
+                  to="https://whatsapp.com/dl/"
+                  className="flex items-center px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-indigo-600 font-medium transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <MdOutlineWifiCalling3 className="mr-3 text-lg text-indigo-500" />
+                  +880 1952-487468
+                </Link>
+                <Link
+                  to="https://maps.app.goo.gl/NGUUB1qKBiXLgVYg7"
+                  className="flex items-center px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-indigo-600 font-medium transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <MdLocationOn className="mr-3 text-lg text-indigo-500" />
+                  Shop Location
+                </Link>
+                <Link
+                  to="https://web.facebook.com/engrarfin/"
+                  className="flex items-center px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-indigo-600 font-medium transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <FcAbout className="mr-3 text-lg" />
+                  About
+                </Link>
+                <Link
+                  to="https://web.facebook.com/engrarfin/"
+                  className="flex items-center px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-indigo-600 font-medium transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <MdOutlineContactPhone className="mr-3 text-lg text-indigo-500" />
+                  Contact
+                </Link>
+              </div>
+
+              <hr className="border-slate-100" />
+
+              {/* Account Actions */}
+              <div className="flex flex-col gap-2.5 pt-2">
+                {user ? (
+                  <button
+                    onClick={() => {
+                      handleLogOut();
+                      setIsMenuOpen(false);
+                    }}
+                    className="w-full py-3 text-center text-sm font-semibold text-rose-600 border border-rose-200 hover:bg-rose-50 rounded-xl transition-all"
+                  >
+                    Logout
+                  </button>
+                ) : (
+                  <div className="flex flex-col gap-2">
+                    <Link
+                      to="/login"
+                      className="w-full py-3 text-center text-sm font-semibold text-slate-700 border border-slate-200 hover:bg-slate-50 rounded-xl transition-all"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Login
+                    </Link>
+                    <Link
+                      to="/signup"
+                      className="w-full py-3 text-center text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl transition-all shadow-sm"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Sign Up
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+            </div>
+          </div>
+        )}
+      </nav>
     </section>
   );
 };

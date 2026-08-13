@@ -33,16 +33,15 @@ const SocialLogin = () => {
   };
 
   return (
-    <div>
-      <div className="divider"></div>
-      <div className="w-full text-center my-4">
-        <button
-          onClick={handleGoogleSignIn}
-          className="btn btn-circle text-white btn-outline"
-        >
-          <FaGoogle></FaGoogle>
-        </button>
-      </div>
+    <div className="w-full text-center mt-4">
+      <button
+        onClick={handleGoogleSignIn}
+        type="button"
+        className="flex items-center justify-center gap-3 w-full py-3 px-4 border border-slate-200 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold shadow-sm transition-all duration-150 active:scale-[0.99] text-sm focus:outline-none focus:ring-4 focus:ring-slate-100"
+      >
+        <FaGoogle className="text-rose-500 text-lg" />
+        <span>Continue with Google</span>
+      </button>
     </div>
   );
 };
