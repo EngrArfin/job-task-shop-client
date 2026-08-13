@@ -365,3 +365,27 @@ tbody tr td{
     padding: 0px;
     margin: 0px;
 }
+
+/* Hide default scrollbar, show a thin, elegant custom scrollbar on hover/scroll */
+.drawer-side::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.drawer-side::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.drawer-side::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.drawer-side:hover::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.35);
+}
+
+.drawer-side::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.6);
+}
