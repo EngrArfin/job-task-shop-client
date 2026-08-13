@@ -64,27 +64,27 @@ const Header = () => {
       </div>
 
       {/* Sidebar Navigation */}
-      <div className="drawer-side border-r border-slate-200/60 z-30 overflow-y-auto">
+      <div className="drawer-side border-r border-slate-200/60 z-30 overflow-y-auto bg-white">
         <label
           htmlFor="my-drawer-2"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="menu p-5 w-72 min-h-full bg-white flex flex-col justify-between select-none">
+        <div className="p-6 w-72 min-h-full bg-white flex flex-col justify-between select-none">
           <div className="space-y-6">
             
             {/* General Section */}
             <div>
-              <p className="px-3.5 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2.5">General</p>
+              <p className="px-3.5 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">General</p>
               <ul className="space-y-1">
                 <li>
-                  <Link to="/" className="flex items-center gap-3 px-3.5 py-2 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-slate-50 font-medium text-[13px] transition-all duration-150">
-                    <MdHome className="text-lg text-slate-400" />
+                  <Link to="/" className="flex items-center gap-3 px-3.5 py-2 text-slate-650 hover:text-indigo-600 font-semibold text-[13px] transition-all duration-150">
+                    <MdHome className="text-lg text-slate-400 group-hover:text-indigo-500" />
                     <span>Home</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="product" className="flex items-center gap-3 px-3.5 py-2 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-slate-50 font-medium text-[13px] transition-all duration-150">
+                  <Link to="product" className="flex items-center gap-3 px-3.5 py-2 text-slate-650 hover:text-indigo-600 font-semibold text-[13px] transition-all duration-150">
                     <FaProductHunt className="text-base text-slate-400" />
                     <span>All Products</span>
                   </Link>
@@ -94,15 +94,15 @@ const Header = () => {
 
             {/* Categories Section */}
             <div>
-              <p className="px-3.5 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2.5">Categories</p>
+              <p className="px-3.5 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Categories</p>
               <ul className="space-y-1">
                 
                 {/* Clothing Dropdown */}
                 <li>
-                  <div className="flex flex-col items-stretch p-0 hover:bg-transparent focus:bg-transparent active:bg-transparent">
+                  <div className="flex flex-col items-stretch p-0">
                     <button
                       onClick={() => setShowDropdown(!showDropdown)}
-                      className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-slate-50 font-medium text-[13px] transition-all duration-150"
+                      className="w-full flex items-center justify-between px-3.5 py-2 text-slate-655 hover:text-indigo-600 font-semibold text-[13px] transition-all duration-150"
                     >
                       <div className="flex items-center gap-3">
                         <GiClothes className="text-lg text-slate-400" />
@@ -112,17 +112,17 @@ const Header = () => {
                     </button>
 
                     {showDropdown && (
-                      <div className="w-full pl-9 pr-2 py-1.5 mt-1 space-y-1 bg-slate-50 rounded-xl border border-slate-100">
-                        <Link to="product" className="flex items-center gap-2.5 py-2 px-3 rounded-lg text-xs text-slate-600 hover:text-indigo-600 hover:bg-white font-medium transition-all">
-                          <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                      <div className="w-full pl-9 pr-2 py-1.5 space-y-1">
+                        <Link to="product" className="flex items-center gap-2.5 py-1.5 px-3 text-xs text-slate-500 hover:text-indigo-600 font-medium transition-all">
+                          <span className="w-1 h-1 rounded-full bg-slate-300"></span>
                           <span>Men's Clothing</span>
                         </Link>
-                        <Link to="productCategory" className="flex items-center gap-2.5 py-2 px-3 rounded-lg text-xs text-slate-600 hover:text-indigo-600 hover:bg-white font-medium transition-all">
-                          <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                        <Link to="productCategory" className="flex items-center gap-2.5 py-1.5 px-3 text-xs text-slate-500 hover:text-indigo-600 font-medium transition-all">
+                          <span className="w-1 h-1 rounded-full bg-slate-300"></span>
                           <span>Women's Clothing</span>
                         </Link>
-                        <Link to="/" className="flex items-center gap-2.5 py-2 px-3 rounded-lg text-xs text-slate-600 hover:text-indigo-600 hover:bg-white font-medium transition-all">
-                          <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                        <Link to="/" className="flex items-center gap-2.5 py-1.5 px-3 text-xs text-slate-500 hover:text-indigo-600 font-medium transition-all">
+                          <span className="w-1 h-1 rounded-full bg-slate-300"></span>
                           <span>Kids' Clothing</span>
                         </Link>
                       </div>
@@ -131,25 +131,25 @@ const Header = () => {
                 </li>
 
                 <li>
-                  <Link to="/" className="flex items-center gap-3 px-3.5 py-2 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-slate-50 font-medium text-[13px] transition-all duration-150">
+                  <Link to="/" className="flex items-center gap-3 px-3.5 py-2 text-slate-650 hover:text-indigo-600 font-semibold text-[13px] transition-all duration-150">
                     <MdOutlineElectricalServices className="text-lg text-slate-400" />
                     <span>Electronics</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="product" className="flex items-center gap-3 px-3.5 py-2 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-slate-50 font-medium text-[13px] transition-all duration-150">
+                  <Link to="product" className="flex items-center gap-3 px-3.5 py-2 text-slate-650 hover:text-indigo-600 font-semibold text-[13px] transition-all duration-150">
                     <MdSmartphone className="text-lg text-slate-400" />
                     <span>Smartphones</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="productCategory" className="flex items-center gap-3 px-3.5 py-2 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-slate-50 font-medium text-[13px] transition-all duration-150">
+                  <Link to="productCategory" className="flex items-center gap-3 px-3.5 py-2 text-slate-650 hover:text-indigo-600 font-semibold text-[13px] transition-all duration-150">
                     <MdLaptopChromebook className="text-lg text-slate-400" />
                     <span>Laptops / Tabs</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="flex items-center gap-3 px-3.5 py-2 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-slate-50 font-medium text-[13px] transition-all duration-150">
+                  <Link to="/" className="flex items-center gap-3 px-3.5 py-2 text-slate-650 hover:text-indigo-600 font-semibold text-[13px] transition-all duration-150">
                     <MdImportantDevices className="text-lg text-slate-400" />
                     <span>Accessories</span>
                   </Link>
@@ -159,22 +159,22 @@ const Header = () => {
 
             {/* Help & Support Section */}
             <div>
-              <p className="px-3.5 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2.5">Support</p>
+              <p className="px-3.5 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Support</p>
               <ul className="space-y-1">
                 <li>
-                  <Link to="product" className="flex items-center gap-3 px-3.5 py-2 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-slate-50 font-medium text-[13px] transition-all duration-150">
+                  <Link to="product" className="flex items-center gap-3 px-3.5 py-2 text-slate-650 hover:text-indigo-600 font-semibold text-[13px] transition-all duration-150">
                     <MdContactPhone className="text-lg text-slate-400" />
                     <span>Contact</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="productCategory" className="flex items-center gap-3 px-3.5 py-2 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-slate-50 font-medium text-[13px] transition-all duration-150">
+                  <Link to="productCategory" className="flex items-center gap-3 px-3.5 py-2 text-slate-650 hover:text-indigo-600 font-semibold text-[13px] transition-all duration-150">
                     <MdChat className="text-lg text-slate-400" />
                     <span>Chat With Us</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="productCategory" className="flex items-center gap-3 px-3.5 py-2 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-slate-50 font-medium text-[13px] transition-all duration-150">
+                  <Link to="productCategory" className="flex items-center gap-3 px-3.5 py-2 text-slate-650 hover:text-indigo-600 font-semibold text-[13px] transition-all duration-150">
                     <MdAppSettingsAlt className="text-lg text-slate-400" />
                     <span>Settings</span>
                   </Link>
