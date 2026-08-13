@@ -19,10 +19,9 @@ const Dashboard = () => {
 
   // Premium, unified styling function for sidebar nav items
   const linkStyles = ({ isActive }) =>
-    `flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-200 select-none outline-none ${
-      isActive
-        ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/10"
-        : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/40"
+    `flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-200 select-none outline-none ${isActive
+      ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/10"
+      : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/40"
     }`;
 
   return (
@@ -31,7 +30,7 @@ const Dashboard = () => {
 
       {/* Main content viewport */}
       <div className="drawer-content flex flex-col items-stretch p-6 md:p-8 lg:p-10">
-        
+
         {/* Toggle drawer button for mobile screens */}
         <div className="flex items-center justify-between lg:hidden mb-6 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
           <span className="font-bold text-slate-800 tracking-wide uppercase text-sm">
@@ -60,7 +59,7 @@ const Dashboard = () => {
         ></label>
 
         <div className="w-72 min-h-full bg-slate-900 text-slate-300 border-r border-slate-800 p-6 flex flex-col gap-6">
-          
+
           {/* Logo / Branding */}
           <div className="px-4 py-2">
             <span className="font-bold text-xl tracking-wider text-white bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
@@ -75,7 +74,7 @@ const Dashboard = () => {
                 <div className="text-xs font-bold text-slate-500 uppercase tracking-widest px-4 pt-4 pb-2">
                   Admin Panel
                 </div>
-                
+
                 <NavLink to="/dashboard/allusers" className={linkStyles} end>
                   <MdDashboard className="text-lg" />
                   <span>Admin Dashboard</span>

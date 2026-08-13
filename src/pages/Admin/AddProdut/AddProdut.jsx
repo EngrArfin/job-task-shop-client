@@ -45,7 +45,7 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="w-full px-20 pl-20">
+    <div className="w-full ">
       <Helmet>
         <title>SA Shop | Add Product</title>
       </Helmet>
