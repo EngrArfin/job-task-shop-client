@@ -2,7 +2,7 @@ import photo1 from "../../../../assets/photo1.jpg";
 
 const Footer = () => {
   return (
-    <div className="bg-slate-950 text-slate-300 border-t border-slate-900">
+    <div className="bg-slate-950 text-slate-300 border-t border-slate-900 mt-16 md:mt-24">
       <footer className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         
         {/* Brand Information */}

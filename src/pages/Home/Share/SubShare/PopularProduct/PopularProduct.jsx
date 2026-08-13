@@ -5,6 +5,7 @@ import SectionTitle from "../../SectionTitle/SectionTitle";
 
 const PopularProduct = () => {
   const [categorys, setCategorys] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(10);
 
   useEffect(() => {
     fetch("category.json")
@@ -12,22 +13,26 @@ const PopularProduct = () => {
       .then((data) => setCategorys(data));
   }, []);
 
+  const handleSeeMore = () => {
+    setVisibleCount((prev) => prev + 5);
+  };
+
   return (
-    <div className="mt-12 mb-16 text-slate-800">
+    <div className="mt-12 mb-16 text-slate-800 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionTitle
         heading="Popular Products"
         subHeading="Explore our most-loved and top-rated styles, handpicked for you"
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-4">
-        {categorys.map((category) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {categorys.slice(0, visibleCount).map((category) => (
           <div key={category._id} className="group">
             <div className="bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-100 overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col h-full">
-              
+
               {/* Product Image */}
               <div className="aspect-[4/3] bg-slate-50 flex items-center justify-center p-4 overflow-hidden relative">
-                <img 
-                  src={category.image} 
-                  alt={category.name} 
+                <img
+                  src={category.image}
+                  alt={category.name}
                   className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                 />
                 <span className="absolute top-3 right-3 bg-indigo-50 text-indigo-600 font-bold text-xs px-2.5 py-1 rounded-lg">
@@ -59,6 +64,17 @@ const PopularProduct = () => {
           </div>
         ))}
       </div>
+
+      {visibleCount < categorys.length && (
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={handleSeeMore}
+            className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-md shadow-indigo-600/10 hover:shadow-indigo-600/20 active:scale-[0.98] transition-all duration-150 text-sm"
+          >
+            See More Products
+          </button>
+        </div>
+      )}
     </div>
   );
 };

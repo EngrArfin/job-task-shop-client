@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Category = () => {
   const [categorys, setCategorys] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(12);
 
   useEffect(() => {
     fetch("category.json")
@@ -11,17 +12,21 @@ const Category = () => {
       .then((data) => setCategorys(data));
   }, []);
 
+  const handleSeeMore = () => {
+    setVisibleCount((prev) => prev + 6);
+  };
+
   return (
-    <div className="mt-8 mb-12 text-slate-800">
+    <div className="mt-8 mb-12 text-slate-800 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionTitle
         heading="Shop by Category"
         subHeading="Browse our collection by apparel type to find exactly what you need"
       />
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 px-4">
-        {categorys.map((category) => (
-          <Link 
-            to={`/productCategory?category=${category.name}`} 
-            key={category._id} 
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+        {categorys.slice(0, visibleCount).map((category) => (
+          <Link
+            to={`/productCategory?category=${category.name}`}
+            key={category._id}
             className="group block"
           >
             <div className="bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-100 overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col h-full">
@@ -41,6 +46,17 @@ const Category = () => {
           </Link>
         ))}
       </div>
+
+      {visibleCount < categorys.length && (
+        <div className="flex justify-center mt-10">
+          <button
+            onClick={handleSeeMore}
+            className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-md shadow-indigo-600/10 hover:shadow-indigo-600/20 active:scale-[0.98] transition-all duration-150 text-sm"
+          >
+            See More Categories
+          </button>
+        </div>
+      )}
     </div>
   );
 };
