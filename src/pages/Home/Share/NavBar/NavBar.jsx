@@ -97,33 +97,7 @@ const NavBar = () => {
             </div>
 
             {/* Desktop Action Items */}
-            <div className="hidden lg:flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                {user ? (
-                  <button
-                    onClick={handleLogOut}
-                    className="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-rose-600 transition-colors duration-200"
-                  >
-                    Logout
-                  </button>
-                ) : (
-                  <>
-                    <Link
-                      to="/login"
-                      className="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-indigo-600 transition-colors duration-200"
-                    >
-                      Login
-                    </Link>
-                    <Link
-                      to="/signup"
-                      className="px-4 py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-full shadow-sm transition-all duration-200 transform hover:-translate-y-0.5"
-                    >
-                      Sign Up
-                    </Link>
-                  </>
-                )}
-              </div>
-
+            <div className="hidden lg:flex items-center gap-4">
               {/* Cart Icon */}
               <Link
                 to="/dashboard/mycab"
@@ -150,6 +124,65 @@ const NavBar = () => {
                   </span>
                 )}
               </Link>
+
+              {/* User Dropdown / Auth Menu */}
+              <div className="flex items-center">
+                {user ? (
+                  <div className="dropdown dropdown-end">
+                    <div 
+                      tabIndex={0} 
+                      role="button" 
+                      className="flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 hover:border-indigo-500 overflow-hidden cursor-pointer transition-all duration-200"
+                    >
+                      <img 
+                        src={user?.photoURL || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"} 
+                        alt={user?.displayName || "User"} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <ul 
+                      tabIndex={0} 
+                      className="dropdown-content mt-3 z-[100] p-2 shadow-xl border border-slate-100 bg-white rounded-2xl w-48 text-slate-700 animate-in fade-in slide-in-from-top-2 duration-200"
+                    >
+                      <li className="px-3 py-2 border-b border-slate-50">
+                        <p className="font-bold text-xs text-slate-800 line-clamp-1">{user?.displayName || "User"}</p>
+                        <p className="text-[10px] text-slate-400 truncate mt-0.5">{user?.email}</p>
+                      </li>
+                      <li className="mt-1">
+                        <Link 
+                          to="/dashboard/mycab" 
+                          className="flex items-center gap-2 px-3 py-2 text-sm font-semibold rounded-xl hover:bg-slate-50 hover:text-indigo-600 transition-colors"
+                        >
+                          <span>Dashboard</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <button 
+                          onClick={handleLogOut}
+                          className="w-full flex items-center gap-2 px-3 py-2 text-sm font-semibold rounded-xl text-rose-600 hover:bg-rose-50 transition-colors text-left"
+                        >
+                          Logout
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-3">
+                    <Link
+                      to="/login"
+                      className="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-indigo-600 transition-colors duration-200"
+                    >
+                      Login
+                    </Link>
+                    <Link
+                      to="/signup"
+                      className="px-4 py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-full shadow-sm transition-all duration-200 transform hover:-translate-y-0.5"
+                    >
+                      Sign Up
+                    </Link>
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Mobile Header Icons & Hamburger */}
@@ -256,15 +289,24 @@ const NavBar = () => {
               {/* Account Actions */}
               <div className="flex flex-col gap-2.5 pt-2">
                 {user ? (
-                  <button
-                    onClick={() => {
-                      handleLogOut();
-                      setIsMenuOpen(false);
-                    }}
-                    className="w-full py-3 text-center text-sm font-semibold text-rose-600 border border-rose-200 hover:bg-rose-50 rounded-xl transition-all"
-                  >
-                    Logout
-                  </button>
+                  <div className="flex flex-col gap-2">
+                    <Link
+                      to="/dashboard/mycab"
+                      className="w-full py-3 text-center text-sm font-semibold text-indigo-650 border border-indigo-200 hover:bg-indigo-50 rounded-xl transition-all"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Dashboard
+                    </Link>
+                    <button
+                      onClick={() => {
+                        handleLogOut();
+                        setIsMenuOpen(false);
+                      }}
+                      className="w-full py-3 text-center text-sm font-semibold text-rose-600 border border-rose-200 hover:bg-rose-50 rounded-xl transition-all"
+                    >
+                      Logout
+                    </button>
+                  </div>
                 ) : (
                   <div className="flex flex-col gap-2">
                     <Link
