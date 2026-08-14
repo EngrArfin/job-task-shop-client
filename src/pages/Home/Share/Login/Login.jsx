@@ -156,6 +156,7 @@ const Login = () => {
                     type="email"
                     name="email"
                     placeholder="user@gmail.com"
+                    defaultValue="user@gmail.com"
                     className="input input-bordered w-full pl-4 pr-4 py-3 rounded-xl border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-500/10 transition-all"
                     required
                   />
@@ -171,6 +172,7 @@ const Login = () => {
                   type="password"
                   name="password"
                   placeholder="User123@"
+                  defaultValue="User123@"
                   className="input input-bordered w-full pl-4 pr-4 py-3 rounded-xl border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-500/10 transition-all"
                   required
                 />
