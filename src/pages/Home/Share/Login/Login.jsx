@@ -106,6 +106,43 @@ const Login = () => {
             <p className="text-slate-500 text-sm mt-2">Please enter your account details to continue.</p>
           </div>
 
+          {/* Recruiter Quick Access Banner */}
+          <div className="mt-6 p-4 bg-indigo-50 border border-indigo-100 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="text-left">
+              <p className="text-xs font-bold text-indigo-950">Recruiter Quick Access</p>
+              <p className="text-[10px] text-indigo-700 mt-1">
+                Instant 1-click login using demo credentials.
+              </p>
+              <p className="text-[9px] text-slate-400 font-mono mt-0.5">
+                user@gmail.com / User123@
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                signIn("user@gmail.com", "User123@")
+                  .then((result) => {
+                    Swal.fire({
+                      title: "Recruiter Login Successful",
+                      text: "Welcome back to SAR Shop!",
+                      icon: "success",
+                      confirmButtonColor: '#4f46e5'
+                    });
+                    navigate(from, { replace: true });
+                  })
+                  .catch((error) => {
+                    Swal.fire({
+                      title: "Login Failed",
+                      text: error.message,
+                      icon: "error"
+                    });
+                  });
+              }}
+              className="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl text-xs shadow-md shadow-indigo-600/10 active:scale-[0.98] transition-all shrink-0"
+            >
+              Demo Login
+            </button>
+          </div>
+
           <form onSubmit={handleLogin} className="mt-8 space-y-6">
             <div className="space-y-4">
               
@@ -118,7 +155,7 @@ const Login = () => {
                   <input
                     type="email"
                     name="email"
-                    placeholder="admin@sarshop.com"
+                    placeholder="user@gmail.com"
                     className="input input-bordered w-full pl-4 pr-4 py-3 rounded-xl border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-500/10 transition-all"
                     required
                   />
@@ -133,7 +170,7 @@ const Login = () => {
                 <input
                   type="password"
                   name="password"
-                  placeholder="••••••••"
+                  placeholder="User123@"
                   className="input input-bordered w-full pl-4 pr-4 py-3 rounded-xl border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-500/10 transition-all"
                   required
                 />
