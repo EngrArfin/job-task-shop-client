@@ -1,14 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaHome, FaProductHunt, FaRocketchat, FaShopify } from "react-icons/fa";
-import {
-  MdBookmarkBorder,
-  MdDashboard,
-  MdLocalShipping,
-  MdOutlineMenu,
-  MdOutlinePayments,
-  MdSettings,
-  MdMenu,
-} from "react-icons/md";
+import { FaHome, FaProductHunt, FaShopify } from "react-icons/fa";
+import { MdLocalShipping, MdMenu } from "react-icons/md";
 import useCab from "../pages/User/hook/useCab";
 
 const Dashboard = () => {
@@ -75,24 +67,9 @@ const Dashboard = () => {
                   Admin Panel
                 </div>
 
-                <NavLink to="/dashboard/allusers" className={linkStyles} end>
-                  <MdDashboard className="text-lg" />
-                  <span>Admin Dashboard</span>
-                </NavLink>
-
                 <NavLink to="/dashboard/addProduct" className={linkStyles}>
                   <FaProductHunt className="text-lg" />
                   <span>Add Product</span>
-                </NavLink>
-
-                <NavLink to="/dashboard/allusers" className={linkStyles}>
-                  <MdOutlinePayments className="text-lg" />
-                  <span>Manage Product</span>
-                </NavLink>
-
-                <NavLink to="/dashboard/userhome" className={linkStyles}>
-                  <MdLocalShipping className="text-lg" />
-                  <span>Manage Booking</span>
                 </NavLink>
 
                 <NavLink to="/dashboard/allusers" className={linkStyles}>
@@ -115,26 +92,6 @@ const Dashboard = () => {
                   User Panel
                 </div>
 
-                <NavLink to="/" className={linkStyles} end>
-                  <MdDashboard className="text-lg" />
-                  <span>User Dashboard</span>
-                </NavLink>
-
-                <NavLink to="/" className={linkStyles}>
-                  <FaProductHunt className="text-lg" />
-                  <span>Product</span>
-                </NavLink>
-
-                <NavLink to="/" className={linkStyles}>
-                  <MdOutlinePayments className="text-lg" />
-                  <span>Payment Details</span>
-                </NavLink>
-
-                <NavLink to="/" className={linkStyles}>
-                  <MdLocalShipping className="text-lg" />
-                  <span>Shipping</span>
-                </NavLink>
-
                 <NavLink to="/dashboard/mycab" className={linkStyles}>
                   <FaShopify className="text-lg" />
                   <span>Shop Cab</span>
@@ -153,26 +110,6 @@ const Dashboard = () => {
             <NavLink to="/" className={linkStyles}>
               <FaHome className="text-lg" />
               <span>Home</span>
-            </NavLink>
-
-            <NavLink to="/" className={linkStyles}>
-              <MdOutlineMenu className="text-lg" />
-              <span>Menu</span>
-            </NavLink>
-
-            <NavLink to="/" className={linkStyles}>
-              <MdBookmarkBorder className="text-lg" />
-              <span>Order Product</span>
-            </NavLink>
-
-            <NavLink to="/" className={linkStyles}>
-              <MdSettings className="text-lg" />
-              <span>Setting</span>
-            </NavLink>
-
-            <NavLink to="/" className={linkStyles}>
-              <FaRocketchat className="text-lg" />
-              <span>Chat</span>
             </NavLink>
           </nav>
         </div>
