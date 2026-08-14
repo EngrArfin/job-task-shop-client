@@ -20,7 +20,7 @@ const ProdutCard = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div id="our-collections" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <SectionTitle
         heading="Our Collections"
         subHeading="Discover the latest additions to our premium apparel catalog"

@@ -1,5 +1,6 @@
 import photo1 from "../../../../assets/photo1.jpg";
 import { Link } from "react-router-dom";
+import { FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -23,13 +24,12 @@ const Footer = () => {
           </p>
         </aside>
 
-        {/* Services Links */}
+        {/* Explore Links */}
         <nav className="flex flex-col gap-3">
-          <h6 className="text-white font-bold text-sm uppercase tracking-wider mb-1">Services</h6>
-          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Branding</a>
-          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Design</a>
-          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Marketing</a>
-          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Advertisement</a>
+          <h6 className="text-white font-bold text-sm uppercase tracking-wider mb-1">Explore</h6>
+          <a href="/#shop-category" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">Shop by Category</a>
+          <a href="/#popular-products" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">Popular Products</a>
+          <a href="/#our-collections" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">Our Collections</a>
         </nav>
 
         {/* Company Links */}
@@ -37,8 +37,6 @@ const Footer = () => {
           <h6 className="text-white font-bold text-sm uppercase tracking-wider mb-1">Company</h6>
           <Link to="/about" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">About us</Link>
           <Link to="/contract" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">Contact</Link>
-          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Jobs</a>
-          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Press kit</a>
         </nav>
 
         {/* Social / Newsletter */}
@@ -60,38 +58,23 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex gap-4 mt-2">
-            <a className="text-slate-400 hover:text-indigo-400 transition-colors" aria-label="Twitter">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-              </svg>
+            <a 
+              href="https://web.facebook.com/engrarfin/" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-slate-400 hover:text-indigo-400 text-xl transition-colors" 
+              aria-label="Facebook"
+            >
+              <FaFacebook />
             </a>
-            <a className="text-slate-400 hover:text-indigo-400 transition-colors" aria-label="YouTube">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-              </svg>
-            </a>
-            <a className="text-slate-400 hover:text-indigo-400 transition-colors" aria-label="Facebook">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-              </svg>
+            <a 
+              href="https://whatsapp.com/dl/" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-slate-400 hover:text-indigo-400 text-xl transition-colors" 
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp />
             </a>
           </div>
         </div>

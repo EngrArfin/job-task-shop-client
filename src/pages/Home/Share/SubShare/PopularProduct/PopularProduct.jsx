@@ -18,7 +18,7 @@ const PopularProduct = () => {
   };
 
   return (
-    <div className="mt-12 mb-16 text-slate-800 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="popular-products" className="mt-12 mb-16 text-slate-800 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionTitle
         heading="Popular Products"
         subHeading="Explore our most-loved and top-rated styles, handpicked for you"

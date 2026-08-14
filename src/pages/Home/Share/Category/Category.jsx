@@ -17,7 +17,7 @@ const Category = () => {
   };
 
   return (
-    <div className="mt-8 mb-12 text-slate-800 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="shop-category" className="mt-8 mb-12 text-slate-800 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionTitle
         heading="Shop by Category"
         subHeading="Browse our collection by apparel type to find exactly what you need"

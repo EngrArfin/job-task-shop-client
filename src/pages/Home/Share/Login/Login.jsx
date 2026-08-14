@@ -54,13 +54,13 @@ const Login = () => {
   return (
     <div className="min-h-[calc(100vh-80px)] flex items-center justify-center bg-gradient-to-br from-slate-50 via-slate-100/50 to-slate-200/30 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl w-full bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row border border-slate-100">
-        
+
         {/* Left Column - Visual side (Hidden on screens below lg) */}
         <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-tr from-indigo-600 via-indigo-700 to-violet-800 p-12 text-white flex-col justify-between relative overflow-hidden">
           {/* Decorative shapes in background */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/10 rounded-full blur-3xl -ml-20 -mb-20"></div>
-          
+
           <div className="relative z-10">
             <Link to="/" className="inline-flex items-center gap-2 group">
               <span className="font-bold text-2xl tracking-wider text-white">SAR Shop</span>
@@ -109,13 +109,9 @@ const Login = () => {
           {/* Recruiter Quick Access Banner */}
           <div className="mt-6 p-4 bg-indigo-50 border border-indigo-100 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="text-left">
-              <p className="text-xs font-bold text-indigo-950">Recruiter Quick Access</p>
-              <p className="text-[10px] text-indigo-700 mt-1">
-                Instant 1-click login using demo credentials.
-              </p>
-              <p className="text-[9px] text-slate-400 font-mono mt-0.5">
-                user@gmail.com / User123@
-              </p>
+              <p className="text-xs font-bold text-indigo-950"> Click for Login</p>
+
+
             </div>
             <button
               onClick={() => {
@@ -145,7 +141,7 @@ const Login = () => {
 
           <form onSubmit={handleLogin} className="mt-8 space-y-6">
             <div className="space-y-4">
-              
+
               {/* Email field */}
               <div className="form-control">
                 <label className="label py-1.5">
@@ -181,14 +177,14 @@ const Login = () => {
               {/* Remember me & Forgot Password */}
               <div className="flex items-center justify-between pt-1">
                 <label className="flex items-center gap-2 cursor-pointer select-none">
-                  <input 
-                    type="checkbox" 
-                    className="checkbox checkbox-primary checkbox-sm rounded" 
+                  <input
+                    type="checkbox"
+                    className="checkbox checkbox-primary checkbox-sm rounded"
                   />
                   <span className="text-slate-600 text-xs font-medium">Remember me</span>
                 </label>
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   className="text-xs font-semibold text-indigo-600 hover:text-indigo-700 hover:underline transition-colors"
                 >
                   Forgot password?
