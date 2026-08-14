@@ -51,19 +51,15 @@ const NavBar = () => {
             <span>Shop Location</span>
           </Link>
           <Link
-            to="https://web.facebook.com/engrarfin/"
+            to="/about"
             className="flex items-center text-slate-500 hover:text-indigo-600 transition-colors duration-200"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             <FcAbout className="mr-1.5 text-base" />
             <span>About</span>
           </Link>
           <Link
-            to="https://web.facebook.com/engrarfin/"
+            to="/contract"
             className="flex items-center text-slate-500 hover:text-indigo-600 transition-colors duration-200"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             <MdOutlineContactPhone className="mr-1.5 text-base text-indigo-500" />
             <span>Contact</span>
@@ -238,7 +234,7 @@ const NavBar = () => {
                   Shop Location
                 </Link>
                 <Link
-                  to="https://web.facebook.com/engrarfin/"
+                  to="/about"
                   className="flex items-center px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-indigo-600 font-medium transition-all"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -246,7 +242,7 @@ const NavBar = () => {
                   About
                 </Link>
                 <Link
-                  to="https://web.facebook.com/engrarfin/"
+                  to="/contract"
                   className="flex items-center px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-indigo-600 font-medium transition-all"
                   onClick={() => setIsMenuOpen(false)}
                 >

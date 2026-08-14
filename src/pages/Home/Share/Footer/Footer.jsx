@@ -1,4 +1,5 @@
 import photo1 from "../../../../assets/photo1.jpg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -34,8 +35,8 @@ const Footer = () => {
         {/* Company Links */}
         <nav className="flex flex-col gap-3">
           <h6 className="text-white font-bold text-sm uppercase tracking-wider mb-1">Company</h6>
-          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">About us</a>
-          <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Contact</a>
+          <Link to="/about" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">About us</Link>
+          <Link to="/contract" className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">Contact</Link>
           <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Jobs</a>
           <a className="text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer">Press kit</a>
         </nav>

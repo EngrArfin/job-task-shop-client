@@ -3,8 +3,11 @@ import SectionTitle from "../../Home/Share/SectionTitle/SectionTitle";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
 
-// Add your publishable key
-const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_Pk);
+const stripeKey = import.meta.env.VITE_Payment_Gateway_Pk;
+let stripePromise = null;
+if (stripeKey) {
+  stripePromise = loadStripe(stripeKey);
+}
 
 const Payment = () => {
   return (
@@ -15,9 +18,18 @@ const Payment = () => {
           subHeading="Please confirm payment details below"
         />
         <div className="mt-8">
-          <Elements stripe={stripePromise}>
-            <CheckoutForm />
-          </Elements>
+          {!stripeKey ? (
+            <div className="p-4 bg-amber-50 border border-amber-200 rounded-2xl text-amber-800 text-sm text-center">
+              <p className="font-semibold mb-1">Stripe Key Missing</p>
+              <p className="text-xs text-amber-700">
+                Please set the <code className="bg-amber-100 px-1 py-0.5 rounded font-mono">VITE_Payment_Gateway_Pk</code> environment variable in your configuration.
+              </p>
+            </div>
+          ) : (
+            <Elements stripe={stripePromise}>
+              <CheckoutForm />
+            </Elements>
+          )}
         </div>
       </div>
     </div>

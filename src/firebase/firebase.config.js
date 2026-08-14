@@ -13,5 +13,16 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_appId
 };
 
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+// Initialize Firebase safely to prevent bundle crash if env variables are missing in production
+let app = null;
+if (firebaseConfig.apiKey) {
+  try {
+    app = initializeApp(firebaseConfig);
+  } catch (error) {
+    console.error("Firebase initialization failed:", error);
+  }
+} else {
+  console.warn("Firebase configuration is missing (VITE_apiKey). Authentication will not be functional.");
+}
+
+export { app };

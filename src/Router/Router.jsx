@@ -14,6 +14,8 @@ import AllUsers from "../pages/User/AllUsers/AllUsers";
 import OrderFinal from "../pages/Home/Share/SubShare/OrderFinal/OrderFinal";
 import AddProdut from "../pages/Admin/AddProdut/AddProdut";
 import Payment from "../pages/User/Payment/Payment";
+import AboutUs from "../pages/AboutUs/AboutUs";
+import ContractUs from "../pages/ContractUs/ContractUs";
 
 export const router = createBrowserRouter([
   {
@@ -55,6 +57,14 @@ export const router = createBrowserRouter([
       {
         path: "login",
         element: <Login></Login>,
+      },
+      {
+        path: "about",
+        element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "contract",
+        element: <ContractUs></ContractUs>,
       },
     ],
   },

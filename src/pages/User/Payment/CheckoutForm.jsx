@@ -16,12 +16,18 @@ const CheckoutForm = () => {
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
   useEffect(() => {
-    axiosSecure
-      .post("/create-payment-intent", { price: totalPrice })
-      .then((res) => {
-        console.log(res.data.clientSecret);
-        setClientSecret(res.data.clientSecret);
-      });
+    if (totalPrice > 0) {
+      axiosSecure
+        .post("/create-payment-intent", { price: totalPrice })
+        .then((res) => {
+          console.log(res.data.clientSecret);
+          setClientSecret(res.data.clientSecret);
+        })
+        .catch((err) => {
+          console.error("Error creating payment intent:", err);
+          setError("Failed to initialize payment with backend.");
+        });
+    }
   }, [axiosSecure, totalPrice]);
 
   const handleSubmit = async (event) => {
@@ -68,23 +74,25 @@ const CheckoutForm = () => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <CardElement
-          options={{
-            style: {
-              base: {
-                fontSize: "16px",
-                color: "#424770",
-                "::placeholder": {
-                  color: "#aab7c4",
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="border border-slate-200 rounded-xl p-4 bg-slate-50 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-transparent transition-all">
+          <CardElement
+            options={{
+              style: {
+                base: {
+                  fontSize: "16px",
+                  color: "#1e293b",
+                  "::placeholder": {
+                    color: "#94a3b8",
+                  },
+                },
+                invalid: {
+                  color: "#ef4444",
                 },
               },
-              invalid: {
-                color: "#9e2146",
-              },
-            },
-          }}
-        />
+            }}
+          />
+        </div>
         <button
           className="w-full mt-6 py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-md shadow-indigo-600/10 hover:shadow-indigo-600/20 active:scale-[0.99] transition-all duration-150 text-sm disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none"
           type="submit"
@@ -92,10 +100,10 @@ const CheckoutForm = () => {
         >
           Confirm Payment
         </button>
-        <p className="text-red-500"> {error} </p>
+        {error && <p className="text-red-500 text-sm"> {error} </p>}
         {transcriptionId && (
-          <p className="text-green-500">
-            Your Transtaction id: {transcriptionId}
+          <p className="text-green-600 font-medium text-sm">
+            Your Transaction ID: {transcriptionId}
           </p>
         )}
       </form>
